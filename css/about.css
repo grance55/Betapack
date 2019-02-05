@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  max-width: 100%;
+}
+
+h1 {
+  color: #00963f;
+}
+
+.navbar {
+  width: 100%;
+  border-top: 3px solid #00963f;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  padding: 30px 20%;
+}
+
+.navbar img {
+  width: 250px;
+  cursor: pointer;
+}
+
+.navbar .links {
+  margin: auto 0;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.navbar .links a {
+  text-decoration: none;
+  color: #616b61;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.navbar .links .nav-link {
+  text-decoration: none;
+  color: #404244;
+  margin-right: 15px;
+  font-style: bold;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+  padding: 0;
+}
+
+.navbar .links .nav-link:hover {
+  opacity: 1;
+}
+
+.navbar .links .nav-link::before {
+  -webkit-transition: 400ms;
+  transition: 400ms;
+  height: 3px;
+  content: '';
+  position: absolute;
+  background-color: #00963f;
+}
+
+.navbar .links .nav-link-ltr::before {
+  width: 0%;
+  bottom: -5px;
+}
+
+.navbar .links .nav-link-ltr:hover::before {
+  width: 100%;
+}
+
+.navbar .languages {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.navbar .languages button {
+  background-color: #00963f;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+}
+
+.navbar .languages .btn_en {
+  background-color: #616b61;
+}
+
+.navbar .languages button:hover {
+  color: #404244;
+}
+
+.banner {
+  padding: 0 10%;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  width: 100%;
+  padding: 50px 20%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
+  text-align: justify;
+}
+
+.section1 {
+  width: 100%;
+  padding: 0 20%;
+  text-align: justify;
+  margin-bottom: 100px;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  background-color: #00963f;
+  padding: 0 20%;
+}
+
+footer .inner {
+  padding: 40px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+}
+
+footer .inner .box img {
+  width: 100px;
+}
+
+footer .inner .box h3 {
+  color: white;
+  text-transform: uppercase;
+}
+
+footer .inner .box p {
+  color: white;
+  margin: 0;
+}
+
+footer .inner .box .soc_links {
+  text-align: center;
+}
+
+footer .inner .box .soc_links .fab {
+  font-size: 40px;
+  margin-right: 15px;
+  color: white;
+}
+
+footer .inner .box .soc_links .fab:hover {
+  color: #404244;
+}
+
+footer .inner .middle {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+footer .inner .last {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+footer .copyRight {
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding-bottom: 10px;
+}
+/*# sourceMappingURL=about.css.map */
