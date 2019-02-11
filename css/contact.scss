@@ -115,22 +115,39 @@ h1{
     }
 }
 
-.section{
-    width: 100%;
-    padding: 50px 20%;
+.section1{
+    padding: 100px 20%;
     display: grid;
-    grid-template-columns: repeat(2, 50%);
-    text-align: justify;
+    grid-template-columns: 40% auto;
+    grid-column-gap: 20px;
+    .box button{
+        cursor: pointer;
+        color: #00963f;
+        background-color: transparent;
+        border: 2px solid #00963f;
+        padding: 5px 30px;
+        font-size: 20px;
+        border-radius: 5px;
+        float: right;
+        bottom: 0;
+        margin-top: 10px;
+        -webkit-transition: color 0.5s ease-in-out;
+        -moz-transition: color 0.5s ease-in-out;
+        -ms-transition: color 0.5s ease-in-out;
+        -o-transition: color 0.5s ease-in-out;
+        transition: background-color 0.5s ease-in-out;
+    }
+    .box button:hover{
+        background-color:#00963f;
+        color: white;
+    }
+    
 }
 
-.section1{
-    width: 100%;
-    padding: 0 20%;
-    text-align: justify;
-    margin-bottom: 100px;
-}   
-
-
+#map{
+    margin: 100px 20%;
+    height: 400px;
+}
 
 footer{
     width: 100%;
@@ -184,12 +201,10 @@ footer{
 }
 
 
-
-
-
-
 @media  (max-width: 480px) {
-  
+    h1{
+        font-size: 25px;
+    }
     .navbar{
         display: none;
     }
@@ -287,22 +302,16 @@ footer{
         margin-top: 80px;
     }
 
-    .section{
-        padding: 50px 15%;
+    .section1{
         grid-template-columns: 100%;
         grid-template-rows: repeat(2, auto);
-        img{
-            width: 100%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-
-    .section1{
-        padding: 0 15%;
+        padding: 100px 10%;
     }
     
+    #map{
+        margin: 0;
+    }
+
     footer{
         padding: 0 20%;
         .inner{
@@ -316,7 +325,10 @@ footer{
     }
     
   }
-  @media (min-width: 481px) and (max-width: 1024px)  {
+  @media (min-width: 481px) and (max-width: 800px)  {
+    h1{
+        font-size: 25px;
+    }
     .navbar{
         display: none;
     }
@@ -409,28 +421,21 @@ footer{
         }
     }
 
-    .section{
-        padding: 50px 20%;
-        grid-template-columns: 100%;
-        grid-template-rows: repeat(2, auto);
-        img{
-            max-width: 100%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-
-    .section1{
-        padding: 0 20%;
-    }
-
     .banner{
         padding: 0;
         margin-top: 80px;
     }
 
+    .section1{
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, auto);
+        padding: 100px 10%;
+    }
     
+    #map{
+        margin: 0;
+    }
+
     footer{
         padding: 0 20%;
         .inner{

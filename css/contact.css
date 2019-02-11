@@ -126,21 +126,39 @@ h1 {
   height: 100%;
 }
 
-.section {
-  width: 100%;
-  padding: 50px 20%;
+.section1 {
+  padding: 100px 20%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (50%)[2];
-      grid-template-columns: repeat(2, 50%);
-  text-align: justify;
+  -ms-grid-columns: 40% auto;
+      grid-template-columns: 40% auto;
+  grid-column-gap: 20px;
 }
 
-.section1 {
-  width: 100%;
-  padding: 0 20%;
-  text-align: justify;
-  margin-bottom: 100px;
+.section1 .box button {
+  cursor: pointer;
+  color: #00963f;
+  background-color: transparent;
+  border: 2px solid #00963f;
+  padding: 5px 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  float: right;
+  bottom: 0;
+  margin-top: 10px;
+  -webkit-transition: color 0.5s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.section1 .box button:hover {
+  background-color: #00963f;
+  color: white;
+}
+
+#map {
+  margin: 100px 20%;
+  height: 400px;
 }
 
 footer {
@@ -204,6 +222,9 @@ footer .copyRight {
 }
 
 @media (max-width: 480px) {
+  h1 {
+    font-size: 25px;
+  }
   .navbar {
     display: none;
   }
@@ -301,21 +322,15 @@ footer .copyRight {
     padding: 0;
     margin-top: 80px;
   }
-  .section {
-    padding: 50px 15%;
+  .section1 {
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     -ms-grid-rows: (auto)[2];
         grid-template-rows: repeat(2, auto);
+    padding: 100px 10%;
   }
-  .section img {
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .section1 {
-    padding: 0 15%;
+  #map {
+    margin: 0;
   }
   footer {
     padding: 0 20%;
@@ -333,7 +348,10 @@ footer .copyRight {
   }
 }
 
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 481px) and (max-width: 800px) {
+  h1 {
+    font-size: 25px;
+  }
   .navbar {
     display: none;
   }
@@ -427,25 +445,19 @@ footer .copyRight {
   .links-sidebar .nav_footer .box2 .fab:hover {
     color: #404244;
   }
-  .section {
-    padding: 50px 20%;
+  .banner {
+    padding: 0;
+    margin-top: 80px;
+  }
+  .section1 {
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     -ms-grid-rows: (auto)[2];
         grid-template-rows: repeat(2, auto);
+    padding: 100px 10%;
   }
-  .section img {
-    max-width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .section1 {
-    padding: 0 20%;
-  }
-  .banner {
-    padding: 0;
-    margin-top: 80px;
+  #map {
+    margin: 0;
   }
   footer {
     padding: 0 20%;
@@ -462,4 +474,4 @@ footer .copyRight {
     margin: 20px auto;
   }
 }
-/*# sourceMappingURL=about.css.map */
+/*# sourceMappingURL=contact.css.map */
