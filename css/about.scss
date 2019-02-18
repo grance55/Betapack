@@ -100,8 +100,69 @@ h1{
 
 .links-sidebar{
     display: none;
+    text-align: end;
+    z-index: 10;
+    position: fixed;
+    right: 0;
+    width: 0;
+    height: 100vh;
+    background-color: #00963f;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    a{
+        color: white;
+        padding: 8px 35px;
+        opacity: 0;
+        display: block;
+        font-size: 25px;
+        font-weight: bold;
+        transition: all 0.5s ease-in-out;
+        
+    }
+    .nav_footer{
+        position: fixed;
+        bottom: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        width: 80%;
+        .box1{
+            justify-self: start;
+            margin: 10px;
+            button{
+                background-color: transparent;
+                color: white;
+                border: 2px solid white;
+                width: 35px;
+                height: 35px;
+                cursor: pointer;
+                border-radius: 50%;
+                margin-right: 10px;
+                -webkit-transition: color 0.5s ease-in-out;
+                -moz-transition: color 0.5s ease-in-out;
+                -ms-transition: color 0.5s ease-in-out;
+                -o-transition: color 0.5s ease-in-out;
+                transition: background-color 0.5s ease-in-out;
+                font-weight: bold;
+            }
+            
+            button:hover{
+                color: white;
+                background-color: #00963f;
+            }
+        }
+        .box2{
+            margin: 10px;
+            .fab{
+                font-size: 35px;
+                margin-right: 10px;
+                color: white;
+            }
+            .fab:hover{
+                color: #404244;
+            }
+        }
+    }
 }
-
 
     
 .banner{
@@ -115,12 +176,33 @@ h1{
     }
 }
 
+.section_back{
+    margin: 20px 10%;
+    border-bottom: 1.5px solid #00963f;
+    padding: 10px 0;
+    font-size: 20px;
+    a{
+        color: black;
+    }
+    a:hover{
+        text-decoration: none;
+        color: #00963f;
+    }
+    .fas{
+        margin: 0 10px;
+    }
+}
+
 .section{
     width: 100%;
     padding: 50px 20%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     text-align: justify;
+    img{
+        max-width: 100%;
+        float: right;
+    }
 }
 
 .section1{
@@ -188,8 +270,12 @@ footer{
 
 
 
-@media  (max-width: 480px) {
-  
+
+@media (min-width: 481px) and (max-width: 1024px)  {
+    h1{
+        font-size: 30px;
+    }
+    
     .navbar{
         display: none;
     }
@@ -198,7 +284,7 @@ footer{
         display: inline-block;
         background-color: #00963f;
         width: 100%;
-        height: 80px;
+        height: 60px;
         position: fixed;
         z-index: 10;
         display: grid;
@@ -212,80 +298,89 @@ footer{
             font-size: 30px;
             color: white;
             justify-self: end;
-            margin: auto;
+            margin: auto 35px;
         }
     }
 
     .links-sidebar{
         display: block;
-        text-align: end;
-        z-index: 10;
-        position: fixed;
-        right: 0;
-        width: 0;
-        height: 100vh;
-        background-color: #00963f;
-        visibility: hidden;
-        transition: all 0.5s ease-in-out;
-        a{
-            color: white;
-            padding: 8px 35px;
-            opacity: 0;
-            width: 0;
-            font-size: 25px;
-            font-weight: bold;
-            transition: all 0.5s ease-in-out;
-            
-        }
-        .nav_footer{
-            position: fixed;
-            bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(2, 50%);
-            width: 80%;
-            .box1{
-                justify-self: start;
-                margin: 10px;
-                button{
-                    background-color: transparent;
-                    color: white;
-                    border: 2px solid white;
-                    width: 35px;
-                    height: 35px;
-                    cursor: pointer;
-                    border-radius: 50%;
-                    margin-right: 10px;
-                    -webkit-transition: color 0.5s ease-in-out;
-                    -moz-transition: color 0.5s ease-in-out;
-                    -ms-transition: color 0.5s ease-in-out;
-                    -o-transition: color 0.5s ease-in-out;
-                    transition: background-color 0.5s ease-in-out;
-                    font-weight: bold;
-                }
-                
-                button:hover{
-                    color: white;
-                    background-color: #00963f;
-                }
-            }
-            .box2{
-                margin: 10px;
-                .fab{
-                    font-size: 35px;
-                    margin-right: 10px;
-                    color: white;
-                }
-                .fab:hover{
-                    color: #404244;
-                }
-            }
-        }
     }
 
     .banner{
         padding: 0;
-        margin-top: 80px;
+        margin-top: 60px;
     }
+
+    .section{
+        padding: 50px 20%;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, auto);
+        img{
+            max-width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            float: none;
+        }
+    }
+
+    .section1{
+        padding: 0 20%;
+    }
+
+    footer{
+        padding: 0 20%;
+        .inner{
+            grid-template-columns: none;
+            grid-template-rows: repeat(3, auto);
+            .box{
+                justify-self: center;
+                margin: 20px auto;
+            }
+        }
+    }
+
+}
+@media  (max-width: 480px) {
+    h1{
+        font-size: 30px;
+    }
+
+    .navbar{
+        display: none;
+    }
+
+    .navbar_mob{
+        display: inline-block;
+        background-color: #00963f;
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        z-index: 10;
+        display: grid;
+        top: 0;
+        grid-template-columns: 70% auto;
+        img{
+            width: 60px;
+            margin: auto 10px;
+        }
+        .fas{
+            font-size: 30px;
+            color: white;
+            justify-self: end;
+            margin: auto 35px;
+        }
+    }
+
+    .links-sidebar{
+        display: block;
+    }
+
+    .banner{
+        padding: 0;
+        margin-top: 60px;
+    }
+
 
     .section{
         padding: 50px 15%;
@@ -316,131 +411,3 @@ footer{
     }
     
   }
-  @media (min-width: 481px) and (max-width: 1024px)  {
-    .navbar{
-        display: none;
-    }
-
-    .navbar_mob{
-        display: inline-block;
-        background-color: #00963f;
-        width: 100%;
-        height: 80px;
-        position: fixed;
-        z-index: 10;
-        display: grid;
-        top: 0;
-        grid-template-columns: 70% auto;
-        img{
-            width: 60px;
-            margin: auto 10px;
-        }
-        .fas{
-            font-size: 30px;
-            color: white;
-            justify-self: end;
-            margin: auto;
-        }
-    }
-
-    .links-sidebar{
-        display: block;
-        text-align: end;
-        z-index: 10;
-        position: fixed;
-        right: 0;
-        width: 0;
-        height: 100vh;
-        background-color: #00963f;
-        visibility: hidden;
-        transition: all 0.5s ease-in-out;
-        a{
-            color: white;
-            padding: 8px 35px;
-            opacity: 0;
-            width: 0;
-            font-size: 25px;
-            font-weight: bold;
-            transition: all 0.5s ease-in-out;
-            
-        }
-        .nav_footer{
-            position: fixed;
-            bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(2, 50%);
-            width: 80%;
-            .box1{
-                justify-self: start;
-                margin: 10px;
-                button{
-                    background-color: transparent;
-                    color: white;
-                    border: 2px solid white;
-                    width: 35px;
-                    height: 35px;
-                    cursor: pointer;
-                    border-radius: 50%;
-                    margin-right: 10px;
-                    -webkit-transition: color 0.5s ease-in-out;
-                    -moz-transition: color 0.5s ease-in-out;
-                    -ms-transition: color 0.5s ease-in-out;
-                    -o-transition: color 0.5s ease-in-out;
-                    transition: background-color 0.5s ease-in-out;
-                    font-weight: bold;
-                }
-                
-                button:hover{
-                    color: white;
-                    background-color: #00963f;
-                }
-            }
-            .box2{
-                margin: 10px;
-                .fab{
-                    font-size: 35px;
-                    margin-right: 10px;
-                    color: white;
-                }
-                .fab:hover{
-                    color: #404244;
-                }
-            }
-        }
-    }
-
-    .section{
-        padding: 50px 20%;
-        grid-template-columns: 100%;
-        grid-template-rows: repeat(2, auto);
-        img{
-            max-width: 100%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-
-    .section1{
-        padding: 0 20%;
-    }
-
-    .banner{
-        padding: 0;
-        margin-top: 80px;
-    }
-
-    
-    footer{
-        padding: 0 20%;
-        .inner{
-            grid-template-columns: none;
-            grid-template-rows: repeat(3, auto);
-            .box{
-                justify-self: center;
-                margin: 20px auto;
-            }
-        }
-    }
-   
-}

@@ -10,6 +10,7 @@ body,html{
 }
 
 h1{
+    margin-bottom: 30px;
     color: #00963f;
 }
 
@@ -100,6 +101,68 @@ h1{
 
 .links-sidebar{
     display: none;
+    text-align: end;
+    z-index: 10;
+    position: fixed;
+    right: 0;
+    width: 0;
+    height: 100vh;
+    background-color: #00963f;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    a{
+        color: white;
+        padding: 8px 35px;
+        opacity: 0;
+        display: block;
+        font-size: 25px;
+        font-weight: bold;
+        transition: all 0.5s ease-in-out;
+        
+    }
+    .nav_footer{
+        position: fixed;
+        bottom: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        width: 80%;
+        .box1{
+            justify-self: start;
+            margin: 10px;
+            button{
+                background-color: transparent;
+                color: white;
+                border: 2px solid white;
+                width: 35px;
+                height: 35px;
+                cursor: pointer;
+                border-radius: 50%;
+                margin-right: 10px;
+                -webkit-transition: color 0.5s ease-in-out;
+                -moz-transition: color 0.5s ease-in-out;
+                -ms-transition: color 0.5s ease-in-out;
+                -o-transition: color 0.5s ease-in-out;
+                transition: background-color 0.5s ease-in-out;
+                font-weight: bold;
+            }
+            
+            button:hover{
+                color: white;
+                background-color: #00963f;
+            }
+        }
+        .box2{
+            margin: 10px;
+            .fab{
+                font-size: 35px;
+                margin-right: 10px;
+                color: white;
+            }
+            .fab:hover{
+                color: #404244;
+            }
+        }
+    }
 }
 
 
@@ -115,12 +178,31 @@ h1{
     }
 }
 
+.section_back{
+    margin: 20px 10%;
+    border-bottom: 1.5px solid #00963f;
+    padding: 10px 0;
+    font-size: 20px;
+    a{
+        color: black;
+    }
+    a:hover{
+        text-decoration: none;
+        color: #00963f;
+    }
+    .fas{
+        margin: 0 10px;
+    }
+}
+
 .section1{
     padding: 100px 20%;
     display: grid;
     grid-template-columns: 40% auto;
     grid-column-gap: 20px;
     .box button{
+        grid-column: 2;
+        width: auto;
         cursor: pointer;
         color: #00963f;
         background-color: transparent;
@@ -130,7 +212,7 @@ h1{
         border-radius: 5px;
         float: right;
         bottom: 0;
-        margin-top: 10px;
+        margin-top: 30px;
         -webkit-transition: color 0.5s ease-in-out;
         -moz-transition: color 0.5s ease-in-out;
         -ms-transition: color 0.5s ease-in-out;
@@ -140,6 +222,27 @@ h1{
     .box button:hover{
         background-color:#00963f;
         color: white;
+    }
+    .box .inner{
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        .left{
+            margin-right: 10px;
+            input{
+                width: 100%;
+                padding: 5px 10px;
+                background-color: white !important;
+                margin: 0;
+            }
+            .middle{
+                margin: 20px 0;
+            }
+        }
+        .right{
+            margin-left: 10px;
+            padding: 5px 10px;
+        }
+        
     }
     
 }
@@ -154,11 +257,10 @@ footer{
     height: auto;
     background-color: #00963f;
     padding: 0 20%;
-    
     .inner{
-        padding: 40px 0;
+        padding: 80px 0;
         display: grid;
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(3, 33.3%);
         .box{
             img{
                 width: 100px;
@@ -166,7 +268,6 @@ footer{
             h3{
                 color: white;
                 text-transform: uppercase;
-                
             }
             p{
                 color: white;
@@ -175,13 +276,15 @@ footer{
             
             .soc_links{
                 text-align: center;
+                
                 .fab{
                     font-size: 40px;
-                    margin-right: 15px;
+                    margin: 0 10px;
                     color: white;
                 }
                 .fab:hover{
                     color: #404244;
+                    cursor: pointer;
                 }
             }
         }
@@ -201,6 +304,101 @@ footer{
 }
 
 
+
+@media (min-width: 481px) and (max-width: 1024px)  {
+    h1{
+        font-size: 25px;
+    }
+    .navbar{
+        display: none;
+    }
+
+    .navbar_mob{
+        display: inline-block;
+        background-color: #00963f;
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        z-index: 10;
+        display: grid;
+        top: 0;
+        grid-template-columns: 70% auto;
+        img{
+            width: 60px;
+            margin: auto 10px;
+        }
+        .fas{
+            font-size: 30px;
+            color: white;
+            justify-self: end;
+            margin: auto 35px;
+        }
+    }
+
+    .links-sidebar{
+        display: block;
+    }
+
+    .banner{
+        padding: 0;
+        margin-top: 60px;
+    }
+
+    .section1{
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, auto);
+        padding: 100px 20%;
+        .box{
+            margin-bottom: 80px;
+        }
+        .down{
+            padding: 0 10%;
+        }
+        .box .inner{
+            grid-template-columns: none;
+            grid-template-rows: repeat(3, auto);
+            grid-template-areas: 
+                "one"
+                "two"
+                "three";
+            .left{
+                grid-area: one;
+                margin: 0;
+            }
+            .right{
+                grid-area: two;
+                margin: 20px 0;
+            }
+            .right_btn{
+                grid-area: three;
+                margin: 0;
+                width: 150px;
+                justify-self: center;
+            }
+        }
+    }
+    
+    #map{
+        margin: 0;
+    }
+
+    footer{
+        padding: 0 20%;
+        .inner{
+            grid-template-columns: none;
+            grid-template-rows: repeat(3, auto);
+            .box{
+                justify-self: center;
+                margin: 20px auto;
+            }
+            .middle{
+                text-align: center;
+            }
+        }
+    }
+   
+}
+
 @media  (max-width: 480px) {
     h1{
         font-size: 25px;
@@ -213,7 +411,7 @@ footer{
         display: inline-block;
         background-color: #00963f;
         width: 100%;
-        height: 80px;
+        height: 60px;
         position: fixed;
         z-index: 10;
         display: grid;
@@ -227,93 +425,57 @@ footer{
             font-size: 30px;
             color: white;
             justify-self: end;
-            margin: auto;
+            margin: auto 35px;
         }
     }
 
     .links-sidebar{
         display: block;
-        text-align: end;
-        z-index: 10;
-        position: fixed;
-        right: 0;
-        width: 0;
-        height: 100vh;
-        background-color: #00963f;
-        visibility: hidden;
-        transition: all 0.5s ease-in-out;
-        a{
-            color: white;
-            padding: 8px 35px;
-            opacity: 0;
-            width: 0;
-            font-size: 25px;
-            font-weight: bold;
-            transition: all 0.5s ease-in-out;
-            
-        }
-        .nav_footer{
-            position: fixed;
-            bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(2, 50%);
-            width: 80%;
-            .box1{
-                justify-self: start;
-                margin: 10px;
-                button{
-                    background-color: transparent;
-                    color: white;
-                    border: 2px solid white;
-                    width: 35px;
-                    height: 35px;
-                    cursor: pointer;
-                    border-radius: 50%;
-                    margin-right: 10px;
-                    -webkit-transition: color 0.5s ease-in-out;
-                    -moz-transition: color 0.5s ease-in-out;
-                    -ms-transition: color 0.5s ease-in-out;
-                    -o-transition: color 0.5s ease-in-out;
-                    transition: background-color 0.5s ease-in-out;
-                    font-weight: bold;
-                }
-                
-                button:hover{
-                    color: white;
-                    background-color: #00963f;
-                }
-            }
-            .box2{
-                margin: 10px;
-                .fab{
-                    font-size: 35px;
-                    margin-right: 10px;
-                    color: white;
-                }
-                .fab:hover{
-                    color: #404244;
-                }
-            }
-        }
     }
 
     .banner{
         padding: 0;
-        margin-top: 80px;
+        margin-top: 60px;
     }
-
+    
+    
     .section1{
         grid-template-columns: 100%;
         grid-template-rows: repeat(2, auto);
         padding: 100px 10%;
+        .box{
+            margin-bottom: 80px;
+        }
+        .box .inner{
+            grid-template-columns: none;
+            grid-template-rows: repeat(3, auto);
+            grid-template-areas: 
+                "one"
+                "two"
+                "three";
+            .left{
+                grid-area: one;
+                margin: 0;
+            }
+            .right{
+                grid-area: two;
+                margin: 20px 0;
+            }
+            .right_btn{
+                grid-area: three;
+                margin: 0;
+                width: 150px;
+                justify-self: center;
+            }
+        }
     }
-    
+
     #map{
         margin: 0;
     }
 
     footer{
-        padding: 0 20%;
+        padding: 0 10%;
         .inner{
             grid-template-columns: none;
             grid-template-rows: repeat(3, auto);
@@ -321,131 +483,11 @@ footer{
                 justify-self: center;
                 margin: 20px auto;
             }
+            .middle{
+                text-align: center;
+            }
         }
     }
     
-  }
-  @media (min-width: 481px) and (max-width: 800px)  {
-    h1{
-        font-size: 25px;
-    }
-    .navbar{
-        display: none;
-    }
-
-    .navbar_mob{
-        display: inline-block;
-        background-color: #00963f;
-        width: 100%;
-        height: 80px;
-        position: fixed;
-        z-index: 10;
-        display: grid;
-        top: 0;
-        grid-template-columns: 70% auto;
-        img{
-            width: 60px;
-            margin: auto 10px;
-        }
-        .fas{
-            font-size: 30px;
-            color: white;
-            justify-self: end;
-            margin: auto;
-        }
-    }
-
-    .links-sidebar{
-        display: block;
-        text-align: end;
-        z-index: 10;
-        position: fixed;
-        right: 0;
-        width: 0;
-        height: 100vh;
-        background-color: #00963f;
-        visibility: hidden;
-        transition: all 0.5s ease-in-out;
-        a{
-            color: white;
-            padding: 8px 35px;
-            opacity: 0;
-            width: 0;
-            font-size: 25px;
-            font-weight: bold;
-            transition: all 0.5s ease-in-out;
-            
-        }
-        .nav_footer{
-            position: fixed;
-            bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(2, 50%);
-            width: 80%;
-            .box1{
-                justify-self: start;
-                margin: 10px;
-                button{
-                    background-color: transparent;
-                    color: white;
-                    border: 2px solid white;
-                    width: 35px;
-                    height: 35px;
-                    cursor: pointer;
-                    border-radius: 50%;
-                    margin-right: 10px;
-                    -webkit-transition: color 0.5s ease-in-out;
-                    -moz-transition: color 0.5s ease-in-out;
-                    -ms-transition: color 0.5s ease-in-out;
-                    -o-transition: color 0.5s ease-in-out;
-                    transition: background-color 0.5s ease-in-out;
-                    font-weight: bold;
-                }
-                
-                button:hover{
-                    color: white;
-                    background-color: #00963f;
-                }
-            }
-            .box2{
-                margin: 10px;
-                .fab{
-                    font-size: 35px;
-                    margin-right: 10px;
-                    color: white;
-                }
-                .fab:hover{
-                    color: #404244;
-                }
-            }
-        }
-    }
-
-    .banner{
-        padding: 0;
-        margin-top: 80px;
-    }
-
-    .section1{
-        grid-template-columns: 100%;
-        grid-template-rows: repeat(2, auto);
-        padding: 100px 10%;
-    }
-    
-    #map{
-        margin: 0;
-    }
-
-    footer{
-        padding: 0 20%;
-        .inner{
-            grid-template-columns: none;
-            grid-template-rows: repeat(3, auto);
-            .box{
-                justify-self: center;
-                margin: 20px auto;
-            }
-        }
-    }
-   
 }
+

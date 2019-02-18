@@ -22,7 +22,7 @@ h1 {
   display: grid;
   -ms-grid-columns: (auto)[3];
       grid-template-columns: repeat(3, auto);
-  padding: 30px 20%;
+  padding: 30px 15%;
 }
 
 .navbar img {
@@ -50,12 +50,7 @@ h1 {
   font-style: bold;
   display: inline-block;
   position: relative;
-  opacity: 0.75;
   padding: 0;
-}
-
-.navbar .links .nav-link:hover {
-  opacity: 1;
 }
 
 .navbar .links .nav-link::before {
@@ -65,6 +60,7 @@ h1 {
   content: '';
   position: absolute;
   background-color: #00963f;
+  border-radius: 25px;
 }
 
 .navbar .links .nav-link-ltr::before {
@@ -82,22 +78,110 @@ h1 {
 }
 
 .navbar .languages button {
-  background-color: #00963f;
-  color: white;
-  border: none;
+  background-color: transparent;
+  color: #00963f;
+  border: 2px solid #00963f;
   width: 50px;
   height: 50px;
+  cursor: pointer;
   border-radius: 50%;
   margin-right: 10px;
   -webkit-transition: color 0.5s ease-in-out;
-  transition: color 0.5s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+  font-weight: bold;
 }
 
 .navbar .languages .btn_en {
-  background-color: #616b61;
+  color: #404244;
+  border: 2px solid #404244;
+}
+
+.navbar .languages .btn_en:hover {
+  background-color: #404244;
 }
 
 .navbar .languages button:hover {
+  color: white;
+  background-color: #00963f;
+}
+
+.navbar_mob {
+  display: none;
+}
+
+.links-sidebar {
+  display: none;
+  text-align: end;
+  z-index: 10;
+  position: fixed;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  background-color: #00963f;
+  visibility: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.links-sidebar a {
+  color: white;
+  padding: 8px 35px;
+  opacity: 0;
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.links-sidebar .nav_footer {
+  position: fixed;
+  bottom: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
+  width: 80%;
+}
+
+.links-sidebar .nav_footer .box1 {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  margin: 10px;
+}
+
+.links-sidebar .nav_footer .box1 button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-right: 10px;
+  -webkit-transition: color 0.5s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+  font-weight: bold;
+}
+
+.links-sidebar .nav_footer .box1 button:hover {
+  color: white;
+  background-color: #00963f;
+}
+
+.links-sidebar .nav_footer .box2 {
+  margin: 10px;
+}
+
+.links-sidebar .nav_footer .box2 .fab {
+  font-size: 35px;
+  margin-right: 10px;
+  color: white;
+}
+
+.links-sidebar .nav_footer .box2 .fab:hover {
   color: #404244;
 }
 
@@ -113,9 +197,28 @@ h1 {
   height: 100%;
 }
 
+.section_back {
+  margin: 20px 10%;
+  border-bottom: 1.5px solid #00963f;
+  padding: 10px 0;
+}
+
+.section_back a {
+  color: black;
+}
+
+.section_back a:hover {
+  text-decoration: none;
+  color: #00963f;
+}
+
+.section_back .fas {
+  margin: 0 10px;
+}
+
 .section1 {
   text-align: center;
-  margin: 100px;
+  margin: 100px 20%;
 }
 
 .section1 h1 {
@@ -125,9 +228,9 @@ h1 {
 
 .section1 button {
   cursor: pointer;
-  color: white;
-  background-color: #00963f;
-  border: none;
+  color: #00963f;
+  background-color: transparent;
+  border: 2px solid #00963f;
   padding: 5px 30px;
   font-size: 20px;
   border-radius: 5px;
@@ -138,91 +241,219 @@ h1 {
 }
 
 .section1 button:hover {
-  background-color: #616b61;
+  background-color: #00963f;
+  color: white;
 }
 
 .products {
+  margin: 100px 20%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (400px)[2];
-      grid-template-columns: repeat(2, 400px);
-  -ms-grid-rows: (400px)[2];
-      grid-template-rows: repeat(2, 400px);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  margin: 200px 20%;
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
+  -ms-grid-rows: (50%)[2];
+      grid-template-rows: repeat(2, 50%);
 }
 
-.products #product_box {
+.products img {
+  opacity: 1;
+  z-index: -1;
   width: 100%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-transition: opacity 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out;
+  height: 100%;
+}
+
+.products .box:hover img {
+  opacity: 0.5;
+}
+
+.products .box:hover .inner {
+  visibility: visible;
+  opacity: 0.8;
+}
+
+.products .box {
   position: relative;
 }
 
-.products #product_box .inner {
-  z-index: 100;
+.products .box img {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.products .box .inner {
+  max-width: 100%;
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin: auto;
+          transform: translate(-50%, -50%);
+  visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
 }
 
-.products #product_box .inner p {
-  color: black;
-  font-weight: bold;
-  font-size: 30px;
+.products .box .inner h1 {
   text-align: center;
-  margin: auto 0;
+  color: #404244;
+}
+
+.products .box .inner button {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  color: #404244;
+  background-color: transparent;
+  border: 2px solid #404244;
+  padding: 5px 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  -webkit-transition: color 0.5s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.products .box .inner button:hover {
+  background-color: #404244;
+  color: white;
 }
 
 .products .box1 {
-  background-image: url("../images/burger.jpg");
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
-.products .box2 img {
-  position: relative;
+.products .box2 {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.products .box3 {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.products .box4 {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.products_new {
+  margin: 100px 20%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (48%)[2];
+      grid-template-columns: repeat(2, 48%);
+  -ms-grid-rows: (48%)[2];
+      grid-template-rows: repeat(2, 48%);
+  grid-column-gap: 4%;
+  grid-row-gap: 4%;
+}
+
+.products_new img {
+  opacity: 1;
+  z-index: -1;
   width: 100%;
   height: 100%;
+}
+
+.products_new .box:hover {
+  opacity: 0.5;
+}
+
+.products_new .box:hover .inner {
+  visibility: visible;
+}
+
+.products_new .box {
+  position: relative;
   -webkit-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
 }
 
-.products .box2 img:hover {
-  opacity: 0.5;
-}
-
-.products .box2 .inner2 {
+.products_new .box .inner {
+  max-width: 100%;
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  visibility: hidden;
 }
 
-.products .box2 .inner2 p {
-  color: black;
-  font-weight: bold;
-  font-size: 30px;
+.products_new .box .inner h1 {
   text-align: center;
 }
 
-.products .box3 {
-  background-image: url("../images/limun.jpg");
+.products_new .box .inner button {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  color: #00963f;
+  background-color: transparent;
+  border: 2px solid #00963f;
+  padding: 5px 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  -webkit-transition: color 0.5s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 }
 
-.products .box4 {
-  background-image: url("../images/burger.jpg");
+.products_new .box .inner button:hover {
+  background-color: #00963f;
+  color: white;
 }
 
+/*
+.product_new{
+    margin: 100px 20%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    max-width: 100%;
+    .box{
+        height: 320px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        .inner{
+            max-width: 100%;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            h1{
+                text-align: center;
+            }
+            button{
+                margin: 0 auto;
+                display: flex;
+            }
+        }
+    }
+    .box1{
+        background-image: url('../images/keks.jpg');
+    }
+    .box2{
+        background-image: url('../images/limun.jpg');
+    }
+    .box3{
+        background-image: url('../images/burger.jpg');
+    }
+    .box4{
+        background-image: url('../images/keks.jpg');
+    }
+}
+*/
 footer {
   width: 100%;
   height: auto;
@@ -231,11 +462,11 @@ footer {
 }
 
 footer .inner {
-  padding: 40px 0;
+  padding: 80px 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (auto)[3];
-      grid-template-columns: repeat(3, auto);
+  -ms-grid-columns: (33.3%)[3];
+      grid-template-columns: repeat(3, 33.3%);
 }
 
 footer .inner .box img {
@@ -258,12 +489,13 @@ footer .inner .box .soc_links {
 
 footer .inner .box .soc_links .fab {
   font-size: 40px;
-  margin-right: 15px;
+  margin: 0 10px;
   color: white;
 }
 
 footer .inner .box .soc_links .fab:hover {
   color: #404244;
+  cursor: pointer;
 }
 
 footer .inner .middle {
@@ -281,5 +513,130 @@ footer .copyRight {
   color: white;
   margin: 0;
   padding-bottom: 10px;
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .navbar {
+    display: none;
+  }
+  .navbar_mob {
+    display: inline-block;
+    background-color: #00963f;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 10;
+    display: -ms-grid;
+    display: grid;
+    top: 0;
+    -ms-grid-columns: 70% auto;
+        grid-template-columns: 70% auto;
+  }
+  .navbar_mob img {
+    width: 60px;
+    margin: auto 10px;
+  }
+  .navbar_mob .fas {
+    font-size: 30px;
+    color: white;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    margin: auto 35px;
+  }
+  .links-sidebar {
+    display: block;
+    padding-top: 60px;
+    z-index: 1;
+  }
+  .banner {
+    padding: 0;
+    width: 100%;
+  }
+  .products {
+    margin: 100px 20%;
+  }
+  footer {
+    padding: 0 20%;
+  }
+  footer .inner {
+    -ms-grid-columns: none;
+        grid-template-columns: none;
+    -ms-grid-rows: (auto)[3];
+        grid-template-rows: repeat(3, auto);
+  }
+  footer .inner .box {
+    -ms-grid-column-align: center;
+        justify-self: center;
+    margin: 20px auto;
+  }
+  footer .inner .middle {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    display: none;
+  }
+  .navbar_mob {
+    display: inline-block;
+    background-color: #00963f;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 10;
+    display: -ms-grid;
+    display: grid;
+    top: 0;
+    -ms-grid-columns: 70% auto;
+        grid-template-columns: 70% auto;
+  }
+  .navbar_mob img {
+    width: 60px;
+    margin: auto 10px;
+  }
+  .navbar_mob .fas {
+    font-size: 30px;
+    color: white;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    margin: auto 35px;
+  }
+  .links-sidebar {
+    display: block;
+    padding-top: 60px;
+    z-index: 1;
+  }
+  .banner {
+    padding: 0;
+    width: 100%;
+  }
+  .products {
+    -ms-grid-columns: none;
+        grid-template-columns: none;
+    -ms-grid-rows: (auto)[4];
+        grid-template-rows: repeat(4, auto);
+    grid-row-gap: 20px;
+  }
+  .products .box {
+    margin: 0;
+  }
+  footer {
+    padding: 0 10%;
+  }
+  footer .inner {
+    -ms-grid-columns: none;
+        grid-template-columns: none;
+    -ms-grid-rows: (auto)[3];
+        grid-template-rows: repeat(3, auto);
+  }
+  footer .inner .box {
+    -ms-grid-column-align: center;
+        justify-self: center;
+    margin: 20px auto;
+  }
+  footer .inner .middle {
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=products.css.map */

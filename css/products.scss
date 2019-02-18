@@ -19,7 +19,7 @@ h1{
     border-top: 3px solid #00963f; 
     display: grid;
     grid-template-columns: repeat(3, auto);
-    padding: 30px 20%;
+    padding: 30px 15%;
     img{
         width: 250px;
         cursor: pointer;
@@ -39,14 +39,10 @@ h1{
             margin-right: 15px;
             font-style: bold;
             display: inline-block;
-            position: relative;
-            opacity: 0.75;
+            position: relative;            
             padding: 0;
         }
     
-        .nav-link:hover {
-            opacity: 1;
-        }
     
         .nav-link::before {
             transition: 400ms;
@@ -54,6 +50,7 @@ h1{
             content: '';
             position: absolute;
             background-color: #00963f;
+            border-radius: 25px;
         }
     
         .nav-link-ltr::before {
@@ -68,30 +65,105 @@ h1{
     .languages{
         justify-self: end;
         button{
-            background-color: #00963f;
-            color: white;
-            border: none;
+            background-color: transparent;
+            color: #00963f;
+            border: 2px solid #00963f;
             width: 50px;
             height: 50px;
+            cursor: pointer;
             border-radius: 50%;
             margin-right: 10px;
             -webkit-transition: color 0.5s ease-in-out;
             -moz-transition: color 0.5s ease-in-out;
             -ms-transition: color 0.5s ease-in-out;
             -o-transition: color 0.5s ease-in-out;
-            transition: color 0.5s ease-in-out;
+            transition: background-color 0.5s ease-in-out;
+            font-weight: bold;
         }
         .btn_en{
-            background-color: #616b61;
+            color: #404244;
+            border: 2px solid #404244;
+        }
+        .btn_en:hover{
+            background-color: #404244;
         }
         button:hover{
-            color: #404244;
+            color: white;
+            background-color: #00963f;
         }
     }
 }
 
+.navbar_mob{
+    display: none;
+}
 
-    
+.links-sidebar{
+    display: none;
+    text-align: end;
+    z-index: 10;
+    position: fixed;
+    right: 0;
+    width: 0;
+    height: 100vh;
+    background-color: #00963f;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    a{
+        color: white;
+        padding: 8px 35px;
+        opacity: 0;
+        display: block;
+        font-size: 25px;
+        font-weight: bold;
+        transition: all 0.5s ease-in-out;
+        
+    }
+    .nav_footer{
+        position: fixed;
+        bottom: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        width: 80%;
+        .box1{
+            justify-self: start;
+            margin: 10px;
+            button{
+                background-color: transparent;
+                color: white;
+                border: 2px solid white;
+                width: 35px;
+                height: 35px;
+                cursor: pointer;
+                border-radius: 50%;
+                margin-right: 10px;
+                -webkit-transition: color 0.5s ease-in-out;
+                -moz-transition: color 0.5s ease-in-out;
+                -ms-transition: color 0.5s ease-in-out;
+                -o-transition: color 0.5s ease-in-out;
+                transition: background-color 0.5s ease-in-out;
+                font-weight: bold;
+            }
+            
+            button:hover{
+                color: white;
+                background-color: #00963f;
+            }
+        }
+        .box2{
+            margin: 10px;
+            .fab{
+                font-size: 35px;
+                margin-right: 10px;
+                color: white;
+            }
+            .fab:hover{
+                color: #404244;
+            }
+        }
+    }
+}
+ 
 .banner{
     padding: 0 10%;
     width: 100%;
@@ -103,24 +175,37 @@ h1{
     }
 }
 
+.section_back{
+    margin: 20px 10%;
+    border-bottom: 1.5px solid #00963f;
+    padding: 10px 0;
+    a{
+        color: black;
+    }
+    a:hover{
+        text-decoration: none;
+        color: #00963f;
+    }
+    .fas{
+        margin: 0 10px;
+    }
+}
 
 .section1{
     text-align: center;
-    margin: 100px;
+    margin: 100px 20%;
     h1{
         text-transform: uppercase;
         margin-bottom: 100px;
     }
     button{
         cursor: pointer;
-        color: white;
-        background-color: #00963f;
-        border: none;
+        color: #00963f;
+        background-color: transparent;
+        border: 2px solid #00963f;
         padding: 5px 30px;
         font-size: 20px;
         border-radius: 5px;
-        
-        
         margin-top: 10px;
         -webkit-transition: color 0.5s ease-in-out;
         -moz-transition: color 0.5s ease-in-out;
@@ -129,103 +214,214 @@ h1{
         transition: background-color 0.5s ease-in-out;
     }
     button:hover{
-        background-color:#616b61 ;
+        background-color:#00963f;
+        color: white;
     }
 }
 
 .products{
+    margin: 100px 20%;
     display: grid;
-    grid-template-columns: repeat(2, 400px);
-    grid-template-rows: repeat(2, 400px);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    margin: 200px 20%;
-    
-    #product_box{
-        
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+    img{
+        opacity: 1;
+        z-index: -1;
         width: 100%;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        -webkit-transition: opacity 0.5s ease-in-out;
-        -moz-transition: opacity 0.5s ease-in-out;
-        -ms-transition: opacity 0.5s ease-in-out;
-        -o-transition: opacity 0.5s ease-in-out;
-        transition: opacity 0.5s ease-in-out;
-        position: relative;
-        
-        
+        height: 100%;
+    }
+    .box:hover{
+        img{
+            opacity: 0.5;
+        }
         .inner{
-            z-index: 100;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            margin: auto;
-            opacity: 0;           
-            transition: opacity 0.5s ease-in-out;
-            p{
-                color: black;
-                font-weight: bold;
-                font-size: 30px;
-                text-align: center;
-                margin: auto 0;
-            }
-           
+            visibility: visible;
+            opacity: 0.8;
         }
     }
-    
-    .box1{
-        background-image: url('../images/burger.jpg');
-    }
-    .box2{
+    .box{
+        position: relative;
         img{
-            position: relative;
-            width: 100%;
-            height: 100%;
+            opacity: 1;
+            -webkit-transition: opacity 0.5s ease-in-out;
+            -moz-transition: opacity 0.5s ease-in-out;
+            -ms-transition: opacity 0.5s ease-in-out;
+            -o-transition: opacity 0.5s ease-in-out;
+            transition: opacity 1s ease-in-out;
+        }
+        .inner{
+            max-width: 100%;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            visibility: hidden;
+            opacity: 0;
             -webkit-transition: opacity 0.5s ease-in-out;
             -moz-transition: opacity 0.5s ease-in-out;
             -ms-transition: opacity 0.5s ease-in-out;
             -o-transition: opacity 0.5s ease-in-out;
             transition: opacity 0.5s ease-in-out;
-        }
-        img:hover{
-            opacity: 0.5;
-        }
-        .inner2{
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            p{
-                color: black;
-                font-weight: bold;
-                font-size: 30px;
+            h1{
                 text-align: center;
-                
+                color: #404244;
+            }
+            button{
+                margin: 0 auto;
+                display: flex;
+                cursor: pointer;
+                color: #404244;
+                background-color: transparent;
+                border: 2px solid #404244;
+                padding: 5px 30px;
+                font-size: 20px;
+                border-radius: 5px;
+                -webkit-transition: color 0.5s ease-in-out;
+                -moz-transition: color 0.5s ease-in-out;
+                -ms-transition: color 0.5s ease-in-out;
+                -o-transition: color 0.5s ease-in-out;
+                transition: background-color 0.5s ease-in-out;
+            }
+            button:hover{
+                background-color:#404244;
+                color: white;
             }
         }
     }
+
+    .box1{
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    .box2{
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
     .box3{
-        background-image: url('../images/limun.jpg');
+        margin-right: 10px;
+        margin-top: 10px;
     }
     .box4{
-        background-image: url('../images/burger.jpg');
+        margin-top: 10px;
+        margin-left: 10px;
     }
 }
+
+.products_new{
+    margin: 100px 20%;
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    grid-template-rows: repeat(2, 48%);
+    grid-column-gap: 4%;
+    grid-row-gap: 4%; 
+    
+    img{
+        opacity: 1;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+    }
+    .box:hover{
+        opacity: 0.5;
+        .inner{
+            visibility: visible;
+        }
+    }
+    .box{
+        position: relative;
+        -webkit-transition: opacity 0.5s ease-in-out;
+        -moz-transition: opacity 0.5s ease-in-out;
+        -ms-transition: opacity 0.5s ease-in-out;
+        -o-transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.5s ease-in-out;
+        .inner{
+            max-width: 100%;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            visibility: hidden;
+            h1{
+                text-align: center;
+            }
+            button{
+                margin: 0 auto;
+                display: flex;
+                cursor: pointer;
+                color: #00963f;
+                background-color: transparent;
+                border: 2px solid #00963f;
+                padding: 5px 30px;
+                font-size: 20px;
+                border-radius: 5px;
+                -webkit-transition: color 0.5s ease-in-out;
+                -moz-transition: color 0.5s ease-in-out;
+                -ms-transition: color 0.5s ease-in-out;
+                -o-transition: color 0.5s ease-in-out;
+                transition: background-color 0.5s ease-in-out;
+            }
+            button:hover{
+                background-color:#00963f;
+                color: white;
+            }
+        }
+    }
+
+    
+}
+
+/*
+.product_new{
+    margin: 100px 20%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    max-width: 100%;
+    .box{
+        height: 320px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        .inner{
+            max-width: 100%;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            h1{
+                text-align: center;
+            }
+            button{
+                margin: 0 auto;
+                display: flex;
+            }
+        }
+    }
+    .box1{
+        background-image: url('../images/keks.jpg');
+    }
+    .box2{
+        background-image: url('../images/limun.jpg');
+    }
+    .box3{
+        background-image: url('../images/burger.jpg');
+    }
+    .box4{
+        background-image: url('../images/keks.jpg');
+    }
+}
+*/
+
 
 footer{
     width: 100%;
     height: auto;
     background-color: #00963f;
     padding: 0 20%;
-    
     .inner{
-        padding: 40px 0;
+        padding: 80px 0;
         display: grid;
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(3, 33.3%);
         .box{
             img{
                 width: 100px;
@@ -233,7 +429,6 @@ footer{
             h3{
                 color: white;
                 text-transform: uppercase;
-                
             }
             p{
                 color: white;
@@ -242,13 +437,15 @@ footer{
             
             .soc_links{
                 text-align: center;
+                
                 .fab{
                     font-size: 40px;
-                    margin-right: 15px;
+                    margin: 0 10px;
                     color: white;
                 }
                 .fab:hover{
                     color: #404244;
+                    cursor: pointer;
                 }
             }
         }
@@ -264,5 +461,127 @@ footer{
         color: white;
         margin: 0;
         padding-bottom: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px){
+    
+    .navbar{
+        display: none;
+    }
+
+    .navbar_mob{
+        display: inline-block;
+        background-color: #00963f;
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        z-index: 10;
+        display: grid;
+        top: 0;
+        grid-template-columns: 70% auto;
+        img{
+            width: 60px;
+            margin: auto 10px;
+        }
+        .fas{
+            font-size: 30px;
+            color: white;
+            justify-self: end;
+            margin: auto 35px;
+        }
+    }
+
+    .links-sidebar{
+        display: block;
+        padding-top: 60px;
+        z-index: 1;
+    }
+
+    .banner{
+        padding: 0;
+        width: 100%;
+    }
+
+    .products{
+        margin: 100px 20%;
+    }
+
+    footer{
+        padding: 0 20%;
+        .inner{
+            grid-template-columns: none;
+            grid-template-rows: repeat(3, auto);
+            .box{
+                justify-self: center;
+                margin: 20px auto;
+            }
+            .middle{
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media  (max-width: 480px){
+    .navbar{
+        display: none;
+    }
+
+    .navbar_mob{
+        display: inline-block;
+        background-color: #00963f;
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        z-index: 10;
+        display: grid;
+        top: 0;
+        grid-template-columns: 70% auto;
+        img{
+            width: 60px;
+            margin: auto 10px;
+        }
+        .fas{
+            font-size: 30px;
+            color: white;
+            justify-self: end;
+            margin: auto 35px;
+        }
+    }
+
+    .links-sidebar{
+        display: block;
+        padding-top: 60px;
+        z-index: 1;
+    }
+
+    .banner{
+        padding: 0;
+        width: 100%;
+    }
+
+    .products{
+        grid-template-columns: none;
+        grid-template-rows: repeat(4, auto);
+        grid-row-gap: 20px;
+        .box{
+            margin: 0;
+        }
+    }
+
+    footer{
+        padding: 0 10%;
+        .inner{
+            grid-template-columns: none;
+            grid-template-rows: repeat(3, auto);
+            .box{
+                justify-self: center;
+                margin: 20px auto;
+            }
+            .middle{
+                text-align: center;
+            }
+        }
     }
 }

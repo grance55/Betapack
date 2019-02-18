@@ -5,12 +5,19 @@ function redirect(url) {
 let toggleNavStatus = false;
 let navbar = document.querySelector('.links-sidebar');
 let navbar_links = document.querySelectorAll('.links-sidebar a');
-
 function show_navbar() {
+
     let arrayLength = navbar_links.length;
+
     if (toggleNavStatus === false) {
         navbar.style.visibility = 'visible';
-        navbar.style.width = '80%';
+        if (window.window < 480) {
+            navbar.style.width = '100%';
+        }
+        else {
+            navbar.style.width = '80%';
+        }
+
 
         for (let i = 0; i < arrayLength; i++) {
             navbar_links[i].style.opacity = '1';

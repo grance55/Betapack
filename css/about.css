@@ -112,6 +112,77 @@ h1 {
 
 .links-sidebar {
   display: none;
+  text-align: end;
+  z-index: 10;
+  position: fixed;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  background-color: #00963f;
+  visibility: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.links-sidebar a {
+  color: white;
+  padding: 8px 35px;
+  opacity: 0;
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.links-sidebar .nav_footer {
+  position: fixed;
+  bottom: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
+  width: 80%;
+}
+
+.links-sidebar .nav_footer .box1 {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  margin: 10px;
+}
+
+.links-sidebar .nav_footer .box1 button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-right: 10px;
+  -webkit-transition: color 0.5s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+  font-weight: bold;
+}
+
+.links-sidebar .nav_footer .box1 button:hover {
+  color: white;
+  background-color: #00963f;
+}
+
+.links-sidebar .nav_footer .box2 {
+  margin: 10px;
+}
+
+.links-sidebar .nav_footer .box2 .fab {
+  font-size: 35px;
+  margin-right: 10px;
+  color: white;
+}
+
+.links-sidebar .nav_footer .box2 .fab:hover {
+  color: #404244;
 }
 
 .banner {
@@ -126,6 +197,26 @@ h1 {
   height: 100%;
 }
 
+.section_back {
+  margin: 20px 10%;
+  border-bottom: 1.5px solid #00963f;
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+.section_back a {
+  color: black;
+}
+
+.section_back a:hover {
+  text-decoration: none;
+  color: #00963f;
+}
+
+.section_back .fas {
+  margin: 0 10px;
+}
+
 .section {
   width: 100%;
   padding: 50px 20%;
@@ -134,6 +225,11 @@ h1 {
   -ms-grid-columns: (50%)[2];
       grid-template-columns: repeat(2, 50%);
   text-align: justify;
+}
+
+.section img {
+  max-width: 100%;
+  float: right;
 }
 
 .section1 {
@@ -203,7 +299,10 @@ footer .copyRight {
   padding-bottom: 10px;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 481px) and (max-width: 1024px) {
+  h1 {
+    font-size: 30px;
+  }
   .navbar {
     display: none;
   }
@@ -211,7 +310,7 @@ footer .copyRight {
     display: inline-block;
     background-color: #00963f;
     width: 100%;
-    height: 80px;
+    height: 60px;
     position: fixed;
     z-index: 10;
     display: -ms-grid;
@@ -229,93 +328,31 @@ footer .copyRight {
     color: white;
     -ms-grid-column-align: end;
         justify-self: end;
-    margin: auto;
+    margin: auto 35px;
   }
   .links-sidebar {
     display: block;
-    text-align: end;
-    z-index: 10;
-    position: fixed;
-    right: 0;
-    width: 0;
-    height: 100vh;
-    background-color: #00963f;
-    visibility: hidden;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-  }
-  .links-sidebar a {
-    color: white;
-    padding: 8px 35px;
-    opacity: 0;
-    width: 0;
-    font-size: 25px;
-    font-weight: bold;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-  }
-  .links-sidebar .nav_footer {
-    position: fixed;
-    bottom: 0;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (50%)[2];
-        grid-template-columns: repeat(2, 50%);
-    width: 80%;
-  }
-  .links-sidebar .nav_footer .box1 {
-    -ms-grid-column-align: start;
-        justify-self: start;
-    margin: 10px;
-  }
-  .links-sidebar .nav_footer .box1 button {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    border-radius: 50%;
-    margin-right: 10px;
-    -webkit-transition: color 0.5s ease-in-out;
-    -webkit-transition: background-color 0.5s ease-in-out;
-    transition: background-color 0.5s ease-in-out;
-    font-weight: bold;
-  }
-  .links-sidebar .nav_footer .box1 button:hover {
-    color: white;
-    background-color: #00963f;
-  }
-  .links-sidebar .nav_footer .box2 {
-    margin: 10px;
-  }
-  .links-sidebar .nav_footer .box2 .fab {
-    font-size: 35px;
-    margin-right: 10px;
-    color: white;
-  }
-  .links-sidebar .nav_footer .box2 .fab:hover {
-    color: #404244;
   }
   .banner {
     padding: 0;
-    margin-top: 80px;
+    margin-top: 60px;
   }
   .section {
-    padding: 50px 15%;
+    padding: 50px 20%;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     -ms-grid-rows: (auto)[2];
         grid-template-rows: repeat(2, auto);
   }
   .section img {
-    width: 100%;
+    max-width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    float: none;
   }
   .section1 {
-    padding: 0 15%;
+    padding: 0 20%;
   }
   footer {
     padding: 0 20%;
@@ -333,7 +370,10 @@ footer .copyRight {
   }
 }
 
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
   .navbar {
     display: none;
   }
@@ -341,7 +381,7 @@ footer .copyRight {
     display: inline-block;
     background-color: #00963f;
     width: 100%;
-    height: 80px;
+    height: 60px;
     position: fixed;
     z-index: 10;
     display: -ms-grid;
@@ -359,93 +399,30 @@ footer .copyRight {
     color: white;
     -ms-grid-column-align: end;
         justify-self: end;
-    margin: auto;
+    margin: auto 35px;
   }
   .links-sidebar {
     display: block;
-    text-align: end;
-    z-index: 10;
-    position: fixed;
-    right: 0;
-    width: 0;
-    height: 100vh;
-    background-color: #00963f;
-    visibility: hidden;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
   }
-  .links-sidebar a {
-    color: white;
-    padding: 8px 35px;
-    opacity: 0;
-    width: 0;
-    font-size: 25px;
-    font-weight: bold;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-  }
-  .links-sidebar .nav_footer {
-    position: fixed;
-    bottom: 0;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (50%)[2];
-        grid-template-columns: repeat(2, 50%);
-    width: 80%;
-  }
-  .links-sidebar .nav_footer .box1 {
-    -ms-grid-column-align: start;
-        justify-self: start;
-    margin: 10px;
-  }
-  .links-sidebar .nav_footer .box1 button {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    border-radius: 50%;
-    margin-right: 10px;
-    -webkit-transition: color 0.5s ease-in-out;
-    -webkit-transition: background-color 0.5s ease-in-out;
-    transition: background-color 0.5s ease-in-out;
-    font-weight: bold;
-  }
-  .links-sidebar .nav_footer .box1 button:hover {
-    color: white;
-    background-color: #00963f;
-  }
-  .links-sidebar .nav_footer .box2 {
-    margin: 10px;
-  }
-  .links-sidebar .nav_footer .box2 .fab {
-    font-size: 35px;
-    margin-right: 10px;
-    color: white;
-  }
-  .links-sidebar .nav_footer .box2 .fab:hover {
-    color: #404244;
+  .banner {
+    padding: 0;
+    margin-top: 60px;
   }
   .section {
-    padding: 50px 20%;
+    padding: 50px 15%;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     -ms-grid-rows: (auto)[2];
         grid-template-rows: repeat(2, auto);
   }
   .section img {
-    max-width: 100%;
+    width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
   .section1 {
-    padding: 0 20%;
-  }
-  .banner {
-    padding: 0;
-    margin-top: 80px;
+    padding: 0 15%;
   }
   footer {
     padding: 0 20%;
