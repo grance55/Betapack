@@ -338,8 +338,8 @@ body,html{
             margin-bottom: 0;
             li{
                 background-color: #616b61;
-                height: 12px;
-                width: 12px;
+                height: 15px;
+                width: 15px;
                 border-radius: 50%;
             }
             
@@ -506,6 +506,7 @@ footer{
         }
         .last{
             justify-self: end;
+            text-align: center;
         }
     }
     .copyRight{
@@ -544,6 +545,7 @@ footer{
             justify-self: end;
             margin: auto 35px;
         }
+        
     }
 
     .links-sidebar{

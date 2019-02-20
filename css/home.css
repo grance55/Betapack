@@ -387,8 +387,8 @@ body, html {
 
 .section4 .carousel ol li {
   background-color: #616b61;
-  height: 12px;
-  width: 12px;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
 }
 
@@ -585,6 +585,7 @@ footer .inner .middle {
 footer .inner .last {
   -ms-grid-column-align: end;
       justify-self: end;
+  text-align: center;
 }
 
 footer .copyRight {

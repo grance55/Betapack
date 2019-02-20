@@ -133,6 +133,7 @@ h1 {
   font-weight: bold;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  overflow: hidden;
 }
 
 .links-sidebar .nav_footer {
@@ -247,11 +248,11 @@ footer {
 }
 
 footer .inner {
-  padding: 40px 0;
+  padding: 80px 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (auto)[3];
-      grid-template-columns: repeat(3, auto);
+  -ms-grid-columns: (33.3%)[3];
+      grid-template-columns: repeat(3, 33.3%);
 }
 
 footer .inner .box img {
@@ -274,12 +275,13 @@ footer .inner .box .soc_links {
 
 footer .inner .box .soc_links .fab {
   font-size: 40px;
-  margin-right: 15px;
+  margin: 0 10px;
   color: white;
 }
 
 footer .inner .box .soc_links .fab:hover {
   color: #404244;
+  cursor: pointer;
 }
 
 footer .inner .middle {
@@ -290,6 +292,7 @@ footer .inner .middle {
 footer .inner .last {
   -ms-grid-column-align: end;
       justify-self: end;
+  text-align: center;
 }
 
 footer .copyRight {
@@ -368,6 +371,9 @@ footer .copyRight {
         justify-self: center;
     margin: 20px auto;
   }
+  footer .inner .middle {
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -409,7 +415,7 @@ footer .copyRight {
     margin-top: 60px;
   }
   .section {
-    padding: 50px 15%;
+    padding: 50px 10%;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     -ms-grid-rows: (auto)[2];
@@ -422,10 +428,10 @@ footer .copyRight {
     margin-right: auto;
   }
   .section1 {
-    padding: 0 15%;
+    padding: 0 10%;
   }
   footer {
-    padding: 0 20%;
+    padding: 0 10%;
   }
   footer .inner {
     -ms-grid-columns: none;
@@ -437,6 +443,9 @@ footer .copyRight {
     -ms-grid-column-align: center;
         justify-self: center;
     margin: 20px auto;
+  }
+  footer .inner .middle {
+    text-align: center;
   }
 }
 /*# sourceMappingURL=about.css.map */

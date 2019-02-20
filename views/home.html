@@ -26,14 +26,14 @@
             <a href="./contact.html" class="contact nav-link nav-link-ltr">Kontakt</a>
         </div>
         <div class="languages">
-            <button class="btn_hr" onclick="redirect('http://127.0.0.1:5500/view/home.html')">HR</button>
-            <button class="btn_en" onclick="redirect('http://127.0.0.1:5500/view/home_eng.html')">EN</button>
+            <button class="btn_hr" onclick="redirect('http://127.0.0.1:5500/views/home.html')">HR</button>
+            <button class="btn_en" onclick="redirect('http://127.0.0.1:5500/views/home_eng.html')">EN</button>
         </div>
     </div>
 
     <div class="navbar_mob">
         <img src="../images/logotipi/betapack_B.png" alt="">
-        <i class="fas fa-bars" onclick="show_navbar()"></i>
+        <i class="fas fa-bars" id="nav_icon" onclick="show_navbar()"></i>
     </div>
 
     <aside class="links-sidebar">
@@ -88,7 +88,7 @@
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, eius porro. Architecto
                 delectus tempora modi tenetur vel inventore ipsa error labore maxime enim! Reiciendis, esse
                 laudantium culpa nemo non earum.</p>
-            <button>Saznaj više</button>
+            <button onclick="redirect('http://127.0.0.1:5500/views/about.html')">Saznaj više</button>
         </div>
     </div>
 

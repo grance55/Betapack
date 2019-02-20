@@ -201,6 +201,7 @@ h1 {
   margin: 20px 10%;
   border-bottom: 1.5px solid #00963f;
   padding: 10px 0;
+  font-size: 20px;
 }
 
 .section_back a {
@@ -273,6 +274,7 @@ h1 {
 
 .products .box {
   position: relative;
+  margin: 20px;
 }
 
 .products .box img {
@@ -545,12 +547,11 @@ footer .copyRight {
   }
   .links-sidebar {
     display: block;
-    padding-top: 60px;
     z-index: 1;
   }
   .banner {
     padding: 0;
-    width: 100%;
+    margin-top: 60px;
   }
   .products {
     margin: 100px 20%;
@@ -604,12 +605,11 @@ footer .copyRight {
   }
   .links-sidebar {
     display: block;
-    padding-top: 60px;
     z-index: 1;
   }
   .banner {
     padding: 0;
-    width: 100%;
+    margin-top: 60px;
   }
   .products {
     -ms-grid-columns: none;

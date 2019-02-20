@@ -179,6 +179,7 @@ h1{
     margin: 20px 10%;
     border-bottom: 1.5px solid #00963f;
     padding: 10px 0;
+    font-size: 20px;
     a{
         color: black;
     }
@@ -241,6 +242,7 @@ h1{
     }
     .box{
         position: relative;
+        margin: 20px;
         img{
             opacity: 1;
             -webkit-transition: opacity 0.5s ease-in-out;
@@ -494,13 +496,12 @@ footer{
 
     .links-sidebar{
         display: block;
-        padding-top: 60px;
         z-index: 1;
     }
 
     .banner{
         padding: 0;
-        width: 100%;
+        margin-top: 60px;
     }
 
     .products{
@@ -552,13 +553,12 @@ footer{
 
     .links-sidebar{
         display: block;
-        padding-top: 60px;
         z-index: 1;
     }
 
     .banner{
         padding: 0;
-        width: 100%;
+        margin-top: 60px;
     }
 
     .products{
