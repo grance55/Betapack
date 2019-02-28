@@ -120,7 +120,7 @@ h1{
         transition: all 0.5s ease-in-out;
         
     }
-    .nav_footer{
+    #nav_footer{
         position: fixed;
         bottom: 0;
         display: grid;
@@ -328,7 +328,7 @@ footer{
         grid-template-columns: 70% auto;
         img{
             width: 60px;
-            margin: auto 10px;
+            margin: auto 30px;
         }
         .fas{
             font-size: 30px;
@@ -422,7 +422,7 @@ footer{
         grid-template-columns: 70% auto;
         img{
             width: 60px;
-            margin: auto 10px;
+            margin: auto 20px;
         }
         .fas{
             font-size: 30px;
