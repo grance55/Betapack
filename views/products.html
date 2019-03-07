@@ -21,13 +21,13 @@
     <div class="navbar">
         <img src="../images/logotipi/logo.png" onclick="redirect('http://127.0.0.1:5500/views/home.html')">
         <div class="links">
-            <a href="./products.html" class="articles nav-link nav-link-ltr">Proizvodi</a>
+            <a href="./products.html" class="products_link nav-link nav-link-ltr">Proizvodi</a>
             <a href="./about.html" class="about nav-link nav-link-ltr">O nama</a>
             <a href="./contact.html" class="contact nav-link nav-link-ltr">Kontakt</a>
         </div>
         <div class="languages">
-            <button class="btn_hr" onclick="redirect('http://127.0.0.1:5500/view/home.html')">HR</button>
-            <button class="btn_en" onclick="redirect('http://127.0.0.1:5500/view/home_eng.html')">EN</button>
+            <button class="btn_hr" onclick="redirect('http://127.0.0.1:5500/views/products.html')">HR</button>
+            <button class="btn_en" onclick="redirect('http://127.0.0.1:5500/views/home_eng.html')">EN</button>
         </div>
     </div>
 
@@ -45,8 +45,8 @@
 
         <div id="nav_footer">
             <div class="box1">
-                <button class="btn_hr" onclick="redirect('http://127.0.0.1:5500/view/home.html')">HR</button>
-                <button class="btn_en" onclick="redirect('http://127.0.0.1:5500/view/home_eng.html')">EN</button>
+                <button class="btn_hr" onclick="redirect('http://127.0.0.1:5500/views/products.html')">HR</button>
+                <button class="btn_en" onclick="redirect('http://127.0.0.1:5500/views/home_eng.html')">EN</button>
             </div>
             <div class="box2">
                 <i class="fab fa-facebook-square" onclick="redirect('https://www.facebook.com/betapack')"></i>
@@ -56,7 +56,8 @@
     </aside>
 
     <div class="banner">
-        <img src="../images/banner_proizvodi.jpg" alt="">
+        <img src="../images/banner/proizvodi.png" class="left">
+        <img src="../images/banner/banner_ruka.png" class="right">
     </div>
 
     <div class="section_back">
@@ -67,7 +68,8 @@
 
     <div class="section1">
         <h1>proizvodni asortiman</h1>
-        <button>Katalog</button>
+        <button
+            onclick="redirect('https://drive.google.com/file/d/18yDK__k0clo9l3tvxwFncUMR4Vt7J41a/view')">Katalog</button>
     </div>
 
     <div class="products">
@@ -80,12 +82,24 @@
         </div>
         <div class="box box2">
             <img src="../images/proizvodi/testeri.jpg" alt="">
+            <div class="inner">
+                <h1>Testeri</h1>
+                <button>VIŠE</button>
+            </div>
         </div>
         <div class="box box3">
             <img src="../images/proizvodi/bracera_back.jpg" alt="">
+            <div class="inner">
+                <h1>Šećeri</h1>
+                <button>VIŠE</button>
+            </div>
         </div>
         <div class="box box4">
             <img src="../images/proizvodi/keksi.jpg" alt="">
+            <div class="inner">
+                <h1>Keksi</h1>
+                <button>VIŠE</button>
+            </div>
         </div>
     </div>
 

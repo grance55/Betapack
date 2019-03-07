@@ -186,15 +186,25 @@ h1 {
 }
 
 .banner {
-  padding: 0 10%;
-  width: 100%;
-  height: auto;
-  margin: 0;
+  margin: 0 10%;
+  height: 300px;
+  background-image: url("../images/banner/banner_background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
 }
 
-.banner img {
-  width: 100%;
-  height: 100%;
+.banner .right {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.banner .left {
+  position: absolute;
+  bottom: 0;
 }
 
 .section_back {
@@ -219,7 +229,7 @@ h1 {
 
 .section1 {
   text-align: center;
-  margin: 100px 20%;
+  margin: 50px 20%;
 }
 
 .section1 h1 {
@@ -247,7 +257,8 @@ h1 {
 }
 
 .products {
-  margin: 50px 20%;
+  margin: 0 20%;
+  margin-bottom: 150px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (50%)[2];
@@ -433,14 +444,25 @@ footer .copyRight {
   }
   .links-sidebar {
     display: block;
-    z-index: 1;
   }
   .banner {
     padding: 0;
-    margin-top: 60px;
+    margin: 0;
+    margin-top: 50px;
+  }
+  .banner .left {
+    max-width: 100%;
+    z-index: 2;
   }
   .products {
-    margin: 100px 20%;
+    -ms-grid-columns: none;
+        grid-template-columns: none;
+    -ms-grid-rows: (auto)[4];
+        grid-template-rows: repeat(4, auto);
+    grid-row-gap: 20px;
+  }
+  .products .box {
+    margin: 0;
   }
   footer {
     padding: 0 20%;
@@ -462,6 +484,9 @@ footer .copyRight {
 }
 
 @media (max-width: 480px) {
+  h1, h3, h2 {
+    font-size: 23px;
+  }
   .navbar {
     display: none;
   }
@@ -491,13 +516,24 @@ footer .copyRight {
   }
   .links-sidebar {
     display: block;
-    z-index: 1;
-  }
-  .banner {
-    padding: 0;
     margin-top: 60px;
   }
+  .banner {
+    margin: 0;
+    width: 100%;
+  }
+  .banner .right {
+    width: 280px;
+    height: 180px;
+  }
+  .banner .left {
+    max-width: 100%;
+    top: 0;
+    margin-top: 60px;
+    z-index: 2;
+  }
   .products {
+    margin: 10%;
     -ms-grid-columns: none;
         grid-template-columns: none;
     -ms-grid-rows: (auto)[4];

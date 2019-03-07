@@ -6,7 +6,10 @@ let toggleNavStatus = false,
     navbar = document.querySelector('.links-sidebar'),
     navbar_links = document.querySelectorAll('.links-sidebar a'),
     nav_icon = document.getElementById('nav_icon'),
-    nav_footer = document.getElementById('nav_footer');
+    nav_footer = document.getElementById('nav_footer'),
+    footer = document.querySelector('footer'),
+    sec6 = document.querySelector('.section6'),
+    nav_mob = document.querySelector('.navbar_mob');
 function show_navbar() {
 
     let arrayLength = navbar_links.length;
@@ -49,3 +52,19 @@ function show_navbar() {
         toggleNavStatus = false;
     }
 }
+
+
+window.addEventListener('scroll', () => {
+    spaceBelow = window.innerHeight - sec6.getBoundingClientRect().bottom;
+
+
+    if (screen.height === Math.round(spaceBelow + 60)) {
+        nav_mob.classList.remove('.navbar_mob_light');
+        nav_mob.classList.add('navbar_mob_dark');
+    }
+    else {
+        nav_mob.classList.add('.navbar_mob_light');
+        nav_mob.classList.remove('navbar_mob_dark');
+    }
+});
+

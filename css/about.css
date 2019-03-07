@@ -133,7 +133,6 @@ h1 {
   font-weight: bold;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  overflow: hidden;
 }
 
 .links-sidebar #nav_footer {
@@ -187,15 +186,25 @@ h1 {
 }
 
 .banner {
-  padding: 0 10%;
-  width: 100%;
-  height: auto;
-  margin: 0;
+  margin: 0 10%;
+  height: 300px;
+  background-image: url("../images/banner/banner_background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
 }
 
-.banner img {
-  width: 100%;
-  height: 100%;
+.banner .right {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.banner .left {
+  position: absolute;
+  bottom: 0;
 }
 
 .section_back {
@@ -299,8 +308,8 @@ footer .copyRight {
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
-  h1 {
-    font-size: 30px;
+  h1, h3 {
+    font-size: 25px;
   }
   .navbar {
     display: none;
@@ -334,7 +343,12 @@ footer .copyRight {
   }
   .banner {
     padding: 0;
-    margin-top: 60px;
+    margin: 0;
+    margin-top: 50px;
+  }
+  .banner .left {
+    max-width: 100%;
+    z-index: 2;
   }
   .section {
     padding: 50px 20%;
@@ -373,8 +387,8 @@ footer .copyRight {
 }
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: 30px;
+  h1, h3 {
+    font-size: 23px;
   }
   .navbar {
     display: none;
@@ -405,10 +419,21 @@ footer .copyRight {
   }
   .links-sidebar {
     display: block;
+    margin-top: 60px;
   }
   .banner {
-    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .banner .right {
+    width: 280px;
+    height: 180px;
+  }
+  .banner .left {
+    max-width: 100%;
+    top: 0;
     margin-top: 60px;
+    z-index: 2;
   }
   .section {
     padding: 50px 10%;

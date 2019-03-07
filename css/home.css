@@ -11,6 +11,11 @@ body, html {
   max-width: 100%;
 }
 
+h1 {
+  text-transform: uppercase;
+  color: #00963f;
+}
+
 .navbar {
   width: 100%;
   border-top: 3px solid #00963f;
@@ -37,6 +42,8 @@ body, html {
   color: #616b61;
   font-size: 20px;
   margin-right: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .navbar .links .nav-link {
@@ -113,7 +120,8 @@ body, html {
   position: fixed;
   right: 0;
   width: 0;
-  height: 100vh;
+  bottom: 0;
+  height: calc(100vh - 60px);
   background-color: #00963f;
   visibility: hidden;
   -webkit-transition: all 0.5s ease-in-out;
@@ -187,34 +195,20 @@ body, html {
   background-image: url("../images/banner/banner_background.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (50%)[2];
-      grid-template-columns: repeat(2, 50%);
   position: relative;
-}
-
-.banner p {
-  font-size: 200px;
-  font-weight: bold;
-  margin: 0;
-  opacity: 0.5;
 }
 
 .banner .right {
   width: 400px;
   height: 200px;
-  -ms-grid-column-align: end;
-      justify-self: end;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .banner .left {
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+  position: absolute;
+  bottom: 0;
 }
 
 .section1 {
@@ -233,6 +227,9 @@ body, html {
 .section1 .cursive {
   font-family: 'Courgette', cursive;
   margin: 0;
+  font-size: 40px;
+  color: #616b61;
+  text-transform: capitalize;
 }
 
 .section1 .slidingVertical {
@@ -423,15 +420,6 @@ body, html {
   border: 2px solid #616b61;
 }
 
-.section4 .carousel ol li .circle {
-  height: 8px;
-  width: 8px;
-  background-color: #616b61;
-  border-radius: 50%;
-  margin: auto;
-  margin-top: 2px;
-}
-
 .section5 {
   height: 300px;
   margin: 50px 10%;
@@ -464,17 +452,10 @@ body, html {
   margin-left: 10px;
 }
 
-.section5 .carousel-control-prev .fa-arrow-left,
-.section5 .carousel-control-next .fa-arrow-left {
+.section5 .carousel-control-prev .fas,
+.section5 .carousel-control-next .fas {
   color: #00963f;
-  margin-left: 0;
-  font-size: 20px;
-}
-
-.section5 .carousel-control-prev .fa-arrow-right,
-.section5 .carousel-control-next .fa-arrow-right {
-  color: #00963f;
-  font-size: 20px;
+  font-size: 40px;
 }
 
 .section5_mob {
@@ -577,6 +558,7 @@ footer {
   height: auto;
   background-color: #00963f;
   padding: 0 20%;
+  position: relative;
 }
 
 footer .inner {
@@ -634,13 +616,37 @@ footer .copyRight {
   padding-bottom: 10px;
 }
 
+footer #bouncer {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+footer #bouncer p {
+  margin: 0;
+  color: white;
+}
+
+footer #bouncer i {
+  color: white;
+  font-size: 30px;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
 @media (min-width: 481px) and (max-width: 1024px) {
+  h1, h3, h2 {
+    font-size: 30px;
+  }
   .navbar {
     display: none;
   }
   .navbar_mob {
     display: inline-block;
-    background-color: #00963f;
     width: 100%;
     height: 60px;
     position: fixed;
@@ -662,6 +668,14 @@ footer .copyRight {
         justify-self: end;
     margin: auto 35px;
   }
+  .navbar_mob_light {
+    background-color: #00963f;
+    -webkit-transition: 500ms ease;
+    transition: 500ms ease;
+  }
+  .navbar_mob_dark {
+    background-color: #025725;
+  }
   .links-sidebar {
     display: block;
   }
@@ -669,6 +683,10 @@ footer .copyRight {
     padding: 0;
     margin: 0;
     margin-top: 50px;
+  }
+  .banner .left {
+    max-width: 100%;
+    z-index: 2;
   }
   .section1 {
     padding: 0 20%;
@@ -716,20 +734,14 @@ footer .copyRight {
   .section5_mob .carousel-inner .midd {
     margin: 0 10px;
   }
-  .section5_mob .carousel-control-prev .fa-arrow-left,
-  .section5_mob .carousel-control-next .fa-arrow-left {
+  .section5_mob .carousel-control-prev .fas,
+  .section5_mob .carousel-control-next .fas {
     color: #00963f;
-    margin-left: 0;
-    font-size: 20px;
-  }
-  .section5_mob .carousel-control-prev .fa-arrow-right,
-  .section5_mob .carousel-control-next .fa-arrow-right {
-    color: #00963f;
-    font-size: 20px;
+    font-size: 30px;
   }
   .section6 {
-    margin: 100px 20%;
-    padding: 0;
+    margin: 0 20%;
+    padding: 100px 0;
   }
   .section6 h1 {
     margin-bottom: 40px;
@@ -747,52 +759,54 @@ footer .copyRight {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: neva;
-    width: 30%;
+    width: 120px;
     margin: auto;
   }
   .section6 .inner #maco {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: maco;
-    width: 30%;
+    width: 150px;
     margin: 10px auto;
   }
   .section6 .inner #reviso {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: reviso;
-    width: 30%;
+    width: 130px;
     margin: 10px auto;
   }
   .section6 .inner #olival {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: olival;
-    width: 30%;
+    width: 130px;
     margin: 10px auto;
   }
   .section6 .inner #croatia_airlines {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     grid-area: croatia_airlines;
-    width: 60%;
+    width: 280px;
     margin: 10px auto;
   }
   .section6 .inner #big {
     -ms-grid-row: 6;
     -ms-grid-column: 1;
     grid-area: big;
-    width: 20%;
+    width: 80px;
     margin: auto;
   }
   footer {
     padding: 0 20%;
+    height: calc(100vh - 60px);
   }
   footer .inner {
     -ms-grid-columns: none;
         grid-template-columns: none;
     -ms-grid-rows: (auto)[3];
         grid-template-rows: repeat(3, auto);
+    padding: 0;
   }
   footer .inner .box {
     -ms-grid-column-align: center;
@@ -802,9 +816,20 @@ footer .copyRight {
   footer .inner .middle {
     text-align: center;
   }
+  footer .copyRight {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 @media (max-width: 480px) {
+  h1, h3, h2 {
+    font-size: 23px;
+  }
   .navbar {
     display: none;
   }
@@ -836,26 +861,38 @@ footer .copyRight {
     display: block;
     margin-top: 60px;
   }
+  .navbar_mob_light {
+    background-color: #00963f;
+    -webkit-transition: 500ms ease;
+    transition: 500ms ease;
+  }
+  .navbar_mob_dark {
+    background-color: #025725;
+  }
   .banner {
     margin: 0;
     width: 100%;
   }
-  .banner p {
-    font-size: 100px;
-  }
   .banner .right {
-    width: 300px;
-    height: 150px;
+    width: 280px;
+    height: 180px;
   }
   .banner .left {
-    width: 300px;
-    height: 150px;
-    -ms-flex-item-align: start;
-        align-self: flex-start;
+    max-width: 100%;
+    top: 0;
     margin-top: 60px;
+    z-index: 2;
   }
   .section1 {
+    margin: 50px 0;
     padding: 0 10%;
+  }
+  .section1 .slidingVertical .sentence {
+    font-size: 25px;
+    width: auto;
+  }
+  .section1 .slidingVertical .sentence span {
+    padding-top: 10px;
   }
   .section2 {
     padding: 0 10%;
@@ -901,20 +938,14 @@ footer .copyRight {
   .section5_mob .carousel-inner .midd {
     margin: 0 10px;
   }
-  .section5_mob .carousel-control-prev .fa-arrow-left,
-  .section5_mob .carousel-control-next .fa-arrow-left {
+  .section5_mob .carousel-control-prev .fas,
+  .section5_mob .carousel-control-next .fas {
     color: #00963f;
-    margin-left: 0;
-    font-size: 20px;
-  }
-  .section5_mob .carousel-control-prev .fa-arrow-right,
-  .section5_mob .carousel-control-next .fa-arrow-right {
-    color: #00963f;
-    font-size: 20px;
+    font-size: 30px;
   }
   .section6 {
-    margin: 100px 10%;
-    padding: 0;
+    margin: 0 10%;
+    padding: 100px 0;
     border: none;
   }
   .section6 h1 {
@@ -933,52 +964,54 @@ footer .copyRight {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: neva;
-    width: 40%;
+    width: 100px;
     margin: auto;
   }
   .section6 .inner #maco {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: maco;
-    width: 60%;
+    width: 130px;
     margin: 10px auto;
   }
   .section6 .inner #reviso {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: reviso;
-    width: 50%;
+    width: 110px;
     margin: 10px auto;
   }
   .section6 .inner #olival {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: olival;
-    width: 50%;
+    width: 110px;
     margin: 10px auto;
   }
   .section6 .inner #croatia_airlines {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     grid-area: croatia_airlines;
-    width: 80%;
+    width: 260px;
     margin: 10px auto;
   }
   .section6 .inner #big {
     -ms-grid-row: 6;
     -ms-grid-column: 1;
     grid-area: big;
-    width: 30%;
+    width: 60px;
     margin: auto;
   }
   footer {
-    padding: 0 10%;
+    padding: 0;
+    height: calc(100vh - 60px);
   }
   footer .inner {
     -ms-grid-columns: none;
         grid-template-columns: none;
     -ms-grid-rows: (auto)[3];
         grid-template-rows: repeat(3, auto);
+    padding: 0;
   }
   footer .inner .box {
     -ms-grid-column-align: center;
@@ -987,6 +1020,19 @@ footer .copyRight {
   }
   footer .inner .middle {
     text-align: center;
+  }
+  footer .copyRight {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 12px;
+  }
+  footer #bouncer {
+    margin: 0;
+    margin-right: 5px;
   }
 }
 /*# sourceMappingURL=home.css.map */

@@ -9,7 +9,10 @@ body,html{
     min-height: 100%;
     max-width: 100%;
 }
-
+h1{
+    text-transform: uppercase;
+    color: #00963f;
+}
 .navbar{
     width: 100%;
     border-top: 3px solid #00963f; 
@@ -28,6 +31,9 @@ body,html{
             color: #616b61;
             font-size: 20px;
             margin-right: 20px;
+            // -------------------------------------
+            font-weight: bold;
+            text-transform: uppercase;
         }
         .nav-link {
             text-decoration: none;
@@ -38,7 +44,7 @@ body,html{
             position: relative;            
             padding: 0;
         }
-    
+        
     
         .nav-link::before {
             transition: 400ms;
@@ -101,7 +107,8 @@ body,html{
     position: fixed;
     right: 0;
     width: 0;
-    height: 100vh;
+    bottom: 0;
+    height: calc(100vh - 60px);
     background-color: #00963f;
     visibility: hidden;
     transition: all 0.5s ease-in-out;
@@ -166,23 +173,17 @@ body,html{
     background-image: url('../images/banner/banner_background.jpg');
     background-repeat: no-repeat;
     background-position: center; 
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
     position: relative;
-    p{
-        font-size: 200px;
-        font-weight: bold;
-        margin: 0;
-        opacity: 0.5;
-    }
     .right{
         width: 400px;
         height: 200px;
-        justify-self: end;
-        align-self: end;
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
     .left{
-        align-self: end;
+        position: absolute;
+        bottom: 0;
     }
 }
 
@@ -199,6 +200,9 @@ body,html{
     .cursive{
         font-family: 'Courgette', cursive;
         margin: 0;
+        font-size: 40px;
+        color: #616b61;
+        text-transform: capitalize;
     }
 
    .slidingVertical{
@@ -357,22 +361,16 @@ body,html{
         ol{
             z-index: 1;
             margin-bottom: 0;
+            
             li{
                 background-color: white;
                 height: 12px;
                 width: 12px;
                 border-radius: 50%;
                 border: 2px solid #616b61;
-                .circle{
-                    height: 8px;
-                    width: 8px;
-                    background-color: #616b61;
-                    border-radius: 50%;
-                    margin: auto;
-                    margin-top: 2px;
-                }
+           
             }
-            
+           
         }
     }
     
@@ -405,15 +403,9 @@ body,html{
     }
     .carousel-control-prev,
     .carousel-control-next{
-        
-        .fa-arrow-left{
+        .fas{
             color: #00963f;
-            margin-left: 0;
-            font-size: 20px;
-        }
-        .fa-arrow-right{
-            color: #00963f;
-            font-size: 20px;
+            font-size: 40px;
         }
     }
 }
@@ -498,6 +490,7 @@ footer{
     height: auto;
     background-color: #00963f;
     padding: 0 20%;
+    position: relative;
     .inner{
         padding: 80px 0;
         display: grid;
@@ -543,19 +536,40 @@ footer{
         margin: 0;
         padding-bottom: 10px;
     }
+
+    #bouncer{
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        p{
+            margin: 0;
+            color: white;
+        }
+        i{
+            color: white;
+            font-size: 30px;
+            animation-duration: 2s;
+        }
+    }
 }
 
 
 
 @media (min-width: 481px) and (max-width: 1024px) {
-  
+    h1,h3, h2{
+        font-size: 30px;
+    }
+
     .navbar{
         display: none;
     }
 
     .navbar_mob{
         display: inline-block;
-        background-color: #00963f;
         width: 100%;
         height: 60px;
         position: fixed;
@@ -575,16 +589,25 @@ footer{
         }
         
     }
-
+    .navbar_mob_light{
+        background-color: #00963f;
+        transition:500ms ease;
+    }
+    .navbar_mob_dark{
+        background-color: #025725;
+    }
     .links-sidebar{
         display: block;
     }
 
     .banner{
-
         padding: 0;
         margin: 0;
         margin-top: 50px;
+        .left{
+            max-width: 100%;
+            z-index: 2;
+        }
     }
 
     .section1{
@@ -637,22 +660,16 @@ footer{
         }
         .carousel-control-prev,
         .carousel-control-next{
-            .fa-arrow-left{
+            .fas{
                 color: #00963f;
-                margin-left: 0;
-                font-size: 20px;
-            }
-            .fa-arrow-right{
-                color: #00963f;
-                font-size: 20px;
+                font-size: 30px;
             }
         }
     }
     
     .section6 {
-        margin: 100px 20%;
-        padding: 0;
-        
+        margin: 0 20%;
+        padding: 100px 0;        
         h1{
             margin-bottom: 40px;
         }
@@ -670,32 +687,32 @@ footer{
                 "big";
                 #neva{
                     grid-area: neva;
-                    width: 30%;
+                    width: 120px;
                     margin: auto;
                 }
                 #maco{
                     grid-area: maco;
-                    width: 30%;
+                    width: 150px;
                     margin: 10px auto;
                 }
                 #reviso{
                     grid-area: reviso;
-                    width: 30%;
+                    width: 130px;
                     margin: 10px auto;
                 }
                 #olival{
                     grid-area: olival;
-                    width: 30%;
+                    width: 130px;
                     margin: 10px auto;
                 }
                 #croatia_airlines{
                     grid-area: croatia_airlines;
-                    width: 60%;
+                    width: 280px;
                     margin: 10px auto;
                 }
                 #big{
                     grid-area: big;
-                    width: 20%;
+                    width: 80px;
                     margin: auto;
                 }
         }
@@ -704,9 +721,11 @@ footer{
 
     footer{
         padding: 0 20%;
+        height: calc(100vh - 60px);
         .inner{
             grid-template-columns: none;
             grid-template-rows: repeat(3, auto);
+            padding: 0;
             .box{
                 justify-self: center;
                 margin: 20px auto;
@@ -715,10 +734,24 @@ footer{
                 text-align: center;
             }
         }
+        .copyRight{
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            
+        }
     }
     
 }
+
 @media  (max-width: 480px){
+    h1,h3, h2{
+        font-size: 23px;
+    }
+
     .navbar{
         display: none;
     }
@@ -749,27 +782,43 @@ footer{
         display: block;
         margin-top: 60px;
     }
+    .navbar_mob_light{
+        background-color: #00963f;
+        transition:500ms ease;
+    }
+    .navbar_mob_dark{
+        background-color: #025725;
+    }
 
     .banner{
         margin: 0;
         width: 100%;
-        p{
-            font-size: 100px;
-        }
         .right{
-            width: 300px;
-            height: 150px;
+            width: 280px;
+            height: 180px;
         }
         .left{
-            width: 300px;
-            height: 150px;
-            align-self: flex-start;
-            margin-top: 60px; 
+           max-width: 100%;
+           top: 0;
+           margin-top: 60px;
+           z-index: 2;
         }
+        
     }
 
     .section1{
+        margin: 50px 0;
         padding: 0 10%;
+        .slidingVertical{
+            .sentence{
+                font-size: 25px;
+                width: auto;
+                span{
+                    padding-top: 10px;
+                }
+            }
+        }
+        
     }
 
     .section2{
@@ -818,21 +867,16 @@ footer{
         }
         .carousel-control-prev,
         .carousel-control-next{
-            .fa-arrow-left{
+            .fas{
                 color: #00963f;
-                margin-left: 0;
-                font-size: 20px;
-            }
-            .fa-arrow-right{
-                color: #00963f;
-                font-size: 20px;
+                font-size: 30px;
             }
         }
     }
 
     .section6 {
-        margin: 100px 10%;
-        padding: 0;
+        margin:0 10%;
+        padding:  100px 0;
         border: none;
         h1{
             margin-bottom: 40px;
@@ -851,32 +895,32 @@ footer{
                 "big";
                 #neva{
                     grid-area: neva;
-                    width: 40%;
+                    width: 100px;
                     margin: auto;
                 }
                 #maco{
                     grid-area: maco;
-                    width: 60%;
+                    width: 130px;
                     margin: 10px auto;
                 }
                 #reviso{
                     grid-area: reviso;
-                    width: 50%;
+                    width: 110px;
                     margin: 10px auto;
                 }
                 #olival{
                     grid-area: olival;
-                    width: 50%;
+                    width: 110px;
                     margin: 10px auto;
                 }
                 #croatia_airlines{
                     grid-area: croatia_airlines;
-                    width: 80%;
+                    width: 260px;
                     margin: 10px auto;
                 }
                 #big{
                     grid-area: big;
-                    width: 30%;
+                    width: 60px;
                     margin: auto;
                 }
         }
@@ -884,10 +928,12 @@ footer{
     }
 
     footer{
-        padding: 0 10%;
+        padding: 0;
+        height: calc(100vh - 60px);
         .inner{
             grid-template-columns: none;
             grid-template-rows: repeat(3, auto);
+            padding: 0;
             .box{
                 justify-self: center;
                 margin: 20px auto;
@@ -896,7 +942,21 @@ footer{
                 text-align: center;
             }
         }
+        .copyRight{
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font-size: 12px;
+        }
+        #bouncer{
+            margin: 0;
+            margin-right: 5px;
+        }
     }
+    
     
 }
 
