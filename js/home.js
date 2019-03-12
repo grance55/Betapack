@@ -1,7 +1,3 @@
-function redirect(url) {
-    window.location.href = url;
-}
-
 let toggleNavStatus = false,
     navbar = document.querySelector('.links-sidebar'),
     navbar_links = document.querySelectorAll('.links-sidebar a'),
@@ -9,7 +5,18 @@ let toggleNavStatus = false,
     nav_footer = document.getElementById('nav_footer'),
     footer = document.querySelector('footer'),
     sec6 = document.querySelector('.section6'),
-    nav_mob = document.querySelector('.navbar_mob');
+    nav_mob = document.querySelector('.navbar_mob'),
+    body = document.querySelector('body');
+
+
+
+
+
+function redirect(url) {
+    window.location.href = url;
+}
+
+
 function show_navbar() {
 
     let arrayLength = navbar_links.length;
@@ -32,7 +39,7 @@ function show_navbar() {
             navbar_links[i].style.opacity = '1';
             navbar_links[i].style.width = '100%';
         }
-
+        body.classList.add('stop-scrolling');
         toggleNavStatus = true;
     }
     else {
@@ -49,6 +56,7 @@ function show_navbar() {
             navbar_links[i].style.width = '0';
         }
 
+        body.classList.remove('stop-scrolling');
         toggleNavStatus = false;
     }
 }

@@ -39,8 +39,8 @@ app.post('/send', (req, res) => {
         port: 587,
         secure: false,
         auth: {
-            user: 'grancaric.franko@gmail.com',
-            pass: 'Logitech55'
+            user: '',
+            pass: ''
         },
         tls: {
             rejectUnauthorized: false

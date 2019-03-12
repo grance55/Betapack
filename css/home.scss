@@ -13,6 +13,12 @@ h1{
     text-transform: uppercase;
     color: #00963f;
 }
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
 .navbar{
     width: 100%;
     border-top: 3px solid #00963f; 
@@ -930,6 +936,7 @@ footer{
     footer{
         padding: 0;
         height: calc(100vh - 60px);
+        padding-top: 70px;
         .inner{
             grid-template-columns: none;
             grid-template-rows: repeat(3, auto);
