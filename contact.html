@@ -1,0 +1,205 @@
+<!--
+<?php
+
+    $result = '';
+    if(isset($_POST['submit'])){
+        require 'PHPMailer/PHPMailerAutoload.php';
+        $mail = new PHPMailer;
+
+        $mail->Host = 'smtp.gmail.com';
+        $mail->Port = 587;
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'tls';
+        $mail->Username = 'grancaric.franko@gmail.com';
+        $mail->Password = 'Logitech55';
+        $mail->setFrom($_POST['email'], $_POST['name']);
+        $mail->addAddress('grancaric.franko@gmail.com');
+        $mail->addReplayTo($_POST['email'], $_POST['name']);
+        $mail->isHTML(true);
+        $mail->Subject = 'From Submission: '.$_POST['subject'];
+        $mail->Body = '<h1>Name : '.$_POST['name'];
+
+        if(!$mail->send()){
+            $result = 'Something went wrong. Please try again.';
+        }else{
+            $result = 'Thanks for sending mail.';
+        }
+        
+    }
+
+?>
+!-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/contact.css">
+
+    <title>Betapack</title>
+    <link rel="shortcut icon" type="image/png" href="./images/logotipi/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="./index.html"><img src="./images/logotipi/logo.png"></a>
+        <div class="links">
+            <a href="./products.html" class="products nav-link nav-link-ltr">Proizvodi</a>
+            <a href="./about.html" class="about nav-link nav-link-ltr">O nama</a>
+            <a href="./contact.html" class="contact nav-link nav-link-ltr">Kontakt</a>
+        </div>
+        <div class="languages">
+            <a href="./contact.html"><button class="btn_hr">HR</button></a>
+            <a href="./contact.html"><button class="btn_en">EN</button></a>
+        </div>
+    </div>
+
+    <div class="navbar_mob navbar_mob_light">
+        <img src="./images/logotipi/betapack_B.png" alt="" onclick="redirect('http://betapack-zadar.com')">
+        <i class="fas fa-bars" id="nav_icon" onclick="show_navbar()"></i>
+    </div>
+
+    <aside class="links-sidebar">
+        <a href="./index.html" class="linkovi_a"><i class="fas fa-home"></i>Početna</a>
+        <a href="./products.html" class="linkovi_a"><i class="fas fa-dolly"></i>Proizvodi</a>
+        <a href="./about.html" class="linkovi_a"><i class="fas fa-info"></i>O nama</a>
+        <a href="./contact.html" class="linkovi_a"><i class="far fa-address-book"></i>Kontakt</a>
+
+
+
+        <div id="nav_footer">
+            <div class="box1">
+                <button class="btn_hr">HR</button>
+                <button class="btn_en">EN</button>
+            </div>
+            <div class="box2">
+                <i class="fab fa-facebook-square" onclick="redirect('https://www.facebook.com/betapack')"></i>
+                <i class="fab fa-instagram" onclick="redirect('https://www.facebook.com/betapack')"></i>
+            </div>
+        </div>
+    </aside>
+
+    <div class="banner">
+        <img src="../images/banner/kontakt.png" class="left">
+        <img src="../images/banner/banner_ruka.png" class="right">
+    </div>
+
+    <div class="section_back">
+        <a href="./index.html">Početna</a>
+        <i class="fas fa-angle-right"></i>
+        <a href="./contact.html">Contact</a>
+    </div>
+
+    <div class="section1">
+        <div class="box">
+            <h1>BETAPACK d.o.o.</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad officiis, laboriosam saepe ipsum iste
+                similique a ex illo nihil? Explicabo, aspernatur quos ad corrupti natus blanditiis debitis nam veniam
+                nemo?</p>
+        </div>
+
+        <div class="box down">
+            <h1>KONTAKTIRAJTE NAS</h1>
+            <h1><?= $result; ?></h1>
+            <form method="POST" action="/send" class="inner" autocomplete="off">
+                <div class="left">
+                    <input type="text" name="name" placeholder="Ime*">
+                    <input type="email" name="email" placeholder="email*" class="middle">
+                    <input type="text" name="phone" placeholder="Prezime*">
+                </div>
+                <textarea name="message" class="right" placeholder="Poruka*"></textarea>
+                <button type="submit" name='submit' class="right_btn">Pošalji</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="map">
+    </div>
+
+
+    <footer>
+        <div class="inner">
+            <div class="box">
+                <img src="../images/logotipi/betapack_B.png" alt="">
+            </div>
+            <div class="box middle">
+                <h3>kontakt</h3>
+                <p>BATLEPACK d.o.o</p>
+                <p>Slavska Batušića 8</p>
+                <p>23000 Zadar</p>
+                <p>Mail: betapack@zd.t-com.hr</p>
+                <p>Tel: +385 91 896 8654</p>
+            </div>
+            <div class="box last">
+                <h3>društvene mreže</h3>
+                <div class="soc_links">
+                    <i class="fab fa-facebook-square" onclick="redirect('https://www.facebook.com/betapack')"></i>
+                    <i class="fab fa-instagram" onclick="redirect('https://www.facebook.com/betapack')"></i>
+                </div>
+
+            </div>
+        </div>
+        <p class="copyRight">2018 Copyright © All Rights Reserved.<br>
+            powered by <b>Franko</b></p>
+
+        <div id="bouncer">
+            <i class="far fa-arrow-alt-circle-up"></i>
+            <p>top</p>
+        </div>
+    </footer>
+
+
+    <script>
+        function initMap() {
+            var options = {
+                zoom: 13,
+                center: { lat: 44.11972, lng: 15.24222 }
+            }
+
+            var map = new google.maps.Map(document.getElementById('map'), options);
+
+            var marker = new google.maps.Marker({
+                position: { lat: 44.1225, lng: 15.228 },
+                map: map
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYudwaLtmrnM9VkBsle-E89TeY_qaKX_4&callback=initMap"
+        async defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="../js/home.js"></script>
+    <script type="module">
+        import jump from 'https://cdnjs.cloudflare.com/ajax/libs/jump.js/1.0.2/jump.module.js';
+
+        let arrow_up = document.getElementById('bouncer');
+
+
+
+        arrow_up.addEventListener('click', () => {
+            let top = window.scrollY;
+            jump(-top, {
+                duration: 1500
+            })
+        });
+    </script>
+</body>
+
+</html>

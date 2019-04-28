@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/home.css">
+    <title>Betapack</title>
+    <link rel="shortcut icon" type="image/png" href="./images/logotipi/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="./index.html"><img src="./images/logotipi/logo.png"></a>
+        <div class="links">
+            <a href="./products.html" class="products nav-link nav-link-ltr">Proizvodi</a>
+            <a href="./about.html" class="about nav-link nav-link-ltr">O nama</a>
+            <a href="./contact.html" class="contact nav-link nav-link-ltr">Kontakt</a>
+        </div>
+        <div class="languages">
+            <a href="./index.html"><button class="btn_hr">HR</button></a>
+            <a href="./index.html"><button class="btn_en">EN</button></a>
+        </div>
+    </div>
+
+    <div class="navbar_mob navbar_mob_light">
+        <img src="./images/logotipi/betapack_B.png" alt="" onclick="redirect('http://betapack-zadar.com')">
+        <i class="fas fa-bars" id="nav_icon" onclick="show_navbar()"></i>
+    </div>
+
+    <aside class="links-sidebar">
+        <a href="./index.html" class="linkovi_a"><i class="fas fa-home"></i>Početna</a>
+        <a href="./products.html" class="linkovi_a"><i class="fas fa-dolly"></i>Proizvodi</a>
+        <a href="./about.html" class="linkovi_a"><i class="fas fa-info"></i>O nama</a>
+        <a href="./contact.html" class="linkovi_a"><i class="far fa-address-book"></i>Kontakt</a>
+
+
+        <div id="nav_footer">
+            <div class="box1">
+                <button class="btn_hr">HR</button>
+                <button class="btn_en">EN</button>
+            </div>
+            <div class="box2">
+                <i class="fab fa-facebook-square" onclick="redirect('https://www.facebook.com/betapack')"></i>
+                <i class="fab fa-instagram" onclick="redirect('https://www.facebook.com/betapack')"></i>
+            </div>
+        </div>
+    </aside>
+
+    <div class="banner">
+        <img src="./images/banner/b2b.png" class="left">
+        <img src="./images/banner/banner_ruka.png" class="right">
+    </div>
+
+    <div class="section1">
+        <h2 class="cursive">Pružite svojim klijentima osvježenje!</h2>
+        <div class="slidingVertical">
+            <h2 class="sentence">
+                <span>RESTORANI</span>
+                <span>LOKALI</span>
+                <span>HOTELI</span>
+                <span>APARTMANI</span>
+            </h2>
+        </div>
+    </div>
+
+    <div class="section2">
+        <div class="box right">
+            <h1>kompanija</h1>
+            <p>Betapack je firma sa sjedištem u Zadru specijalizirana za proizvodnju vlažnih maramica. testera,
+                ugostiteljskih šećera, I mnogih drugih proizvoda koje možete personalizirati prema svojim potrebama.
+                Kada se radi o vlažnim maramicama, skoro da ne postoji nešto što neznamo, s toga, ako tražite partnera
+                koji vam može pomoći unaprijediti vaše poslovanje, slobodno nas kontaktirajte I pridružite se tisućama
+                naših zadovoljnih kupaca.</p>
+            <a href="./about.html"><button>Saznaj više</button></a>
+        </div>
+        <div class="box left">
+            <h1>100%</h1>
+            <h1>hrvatski proizvodi</h1>
+            <p>Ono što nas razlikuje od drugih nije samo omjer kvalitete I cijene već i to što nudimo naručivanje
+                minimalne količine od samo 1000 komada. Sve sirovine nabavljamo lokalno i proizvodimo u Zadru, tako
+                da s ponosom reći da su svi naši proizvodi Hrvatske kvalitete.
+            </p>
+        </div>
+    </div>
+
+    <div class="section3">
+        <img src="./images/hrv.png" alt="">
+    </div>
+
+    <div class="section5">
+        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="15000">
+                    <div class="inner_kurac">
+                        <img src="./images/proizvodi/bracera_back.jpg"
+                            onclick="redirect('http://betapack-zadar.com/products.html')" mouseover="showText(this)"
+                            mouseout="dontShowText(this)">
+                        <p class="text_btn">maramice</p>
+                    </div>
+                    <div class="inner_kurac">
+                        <img src="./images/proizvodi/maramice.jpg" class="midd"
+                            onclick="redirect('http://betapack-zadar.com/products.html')">
+                        <p class="text_btn">jhjhfuws</p>
+                    </div>
+                    <div class="inner_kurac" mouseout>
+                        <img src="./images/proizvodi/keksi.jpg"
+                            onclick="redirect('http://betapack-zadar.com/products.html')">
+                        <p class="text_btn">weihfuwe</p>
+                    </div>
+
+                </div>
+                <div class="carousel-item" data-interval="15000">
+                    <img src="./images/proizvodi/burger.jpg" class="left"
+                        onclick="redirect('http://betapack-zadar.com/products.html')">
+                    <img src="./images/proizvodi/testeri.jpg" class="right"
+                        onclick="redirect('http://betapack-zadar.com/products.html')">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                <i class="fas fa-angle-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="section5_mob">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/proizvodi/bracera_back.jpg" alt="..."
+                        onclick="redirect('http://betapack-zadar.com/products.html')">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/proizvodi/keksi.jpg" alt="..."
+                        onclick="redirect('http://betapack-zadar.com/products.html')">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/proizvodi/maramice.jpg" alt="..."
+                        onclick="redirect('http://betapack-zadar.com/products.html')">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/proizvodi/testeri.jpg" alt="..."
+                        onclick="redirect('http://betapack-zadar.com/products.html')">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <i class="fas fa-angle-left"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <i class="fas fa-angle-right"></i>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="section4">
+        <h1>naši klijenti o nama</h1>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="15000">
+                    <p class="person">Marko Lukić, vlasnik restorana</p>
+                    <p>Betapack vlažne maramice su idealne za moj restoran. Dizajn maramica se uklapa sa interijerom I
+                        daje restoranu dozu profesionalnosti. Goste uvijek za stolom dočekaju maramice kojima mogu
+                        očistiti ruke. Tako sam i smanjio trošak sapuna.</p>
+                </div>
+                <div class="carousel-item" data-interval="15000">
+                    <p class="person">Šimun Končurat, vlasnik ugostiteljskog lokala</p>
+                    <p>Firma Betapack za moj kafić proizvodi šećere I kekse za kavu. Gosti se uvijek ugodno iznenade
+                        kada uz kavu dobiju keks. Cijenom sam također zadovoljan.</p>
+                </div>
+                <div class="carousel-item" data-interval="15000">
+                    <p class="person">Ana-Marija Simović, kozmetičarka</p>
+                    <p>Sve drogerije kojima sam ponudila svoju kremu za lice nisu htjeli prihvatiti moju kremu bez
+                        testera. Problem je bio što sve firme koje se bave proizvodnjom testera zahtijevaju veliku
+                        količinu narudžbe. Firma Betapack je jedina kojoj nije bila problem količina moje narudžbe.
+                        Odradili su to vrlo profesionalno.</p>
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                    </li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                    </li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2">
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="section6">
+        <img src="./images/logotipi/nevalogonew.png" onclick="redirect('https://neva.hr/')" id="neva">
+        <img src="./images/logotipi/big_easy.jpg" onclick="redirect('http://bigeasy.co.uk/#home')" id="big">
+        <img src="./images/logotipi/magdisgrupa.jpg" onclick="redirect('https://neva.hr/')" id="maco">
+        <img src="./images/logotipi/reviso.svg" onclick="redirect('http://www.reviso.hr/')" id="reviso">
+        <img src="./images/logotipi/olival-logo_300x300.png" onclick="redirect('https://olival.hr/')" id="olival">
+        <img src="./images/logotipi/logo-20.png" onclick="redirect('https://www.croatiaairlines.com/hr')"
+            id="croatia_airlines">
+    </div>
+
+    <footer>
+        <div class="inner">
+            <div class="box">
+                <img src="./images/logotipi/betapack_B.png" alt="">
+            </div>
+            <div class="box middle">
+                <h3>kontakt</h3>
+                <p>BATLEPACK d.o.o</p>
+                <p>Slavska Batušića 8</p>
+                <p>23000 Zadar</p>
+                <p>Mail: betapack@zd.t-com.hr</p>
+                <p>Tel: +385 91 896 8654</p>
+            </div>
+            <div class="box last">
+                <h3>društvene mreže</h3>
+                <div class="soc_links">
+                    <i class="fab fa-facebook-square" onclick="redirect('https://www.facebook.com/betapack')"></i>
+                    <i class="fab fa-instagram" onclick="redirect('https://www.facebook.com/betapack')"></i>
+                </div>
+
+            </div>
+        </div>
+        <p class="copyRight">2018 Copyright © All Rights Reserved.<br>
+            powered by <b>Franko</b></p>
+
+        <div id="bouncer">
+            <i class="far fa-arrow-alt-circle-up"></i>
+            <p>top</p>
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="../js/home.js"></script>
+    <script type="module">
+        import jump from 'https://cdnjs.cloudflare.com/ajax/libs/jump.js/1.0.2/jump.module.js';
+
+        let arrow_up = document.getElementById('bouncer');
+
+
+        arrow_up.addEventListener('click', () => {
+            let top = window.scrollY;
+            jump(-top, {
+                duration: 1500
+            })
+        });
+
+
+        window.addEventListener('scroll', () => {
+            const sec2 = document.querySelector('.section2');
+
+            let postotak = document.documentElement.scrollHeight * 0.05;
+            if (window.scrollY > postotak) {
+                sec2.classList.add('animated', 'slideInLeft', 'slow');
+                sec2.style.visibility = 'visible';
+            }
+
+        });
+    </script>
+</body>
+
+</html>

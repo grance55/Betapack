@@ -5,10 +5,13 @@
 }
 body,html{
     font-family: 'Open Sans', sans-serif;
-    height: 100%;
+    min-height: 100%;
     max-width: 100%;
 }
-
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
 h1{
     color: #00963f;
 }
@@ -112,11 +115,14 @@ h1{
     a{
         color: white;
         padding: 8px 35px;
-        opacity: 0;
+        opacity: 1;
         display: block;
         font-size: 25px;
         font-weight: bold;
-        transition: all 0.5s ease-in-out;
+        
+        i{
+            margin-right: 10px;
+        }
         
     }
     #nav_footer{
@@ -220,11 +226,13 @@ h1{
 
 
 
+
 footer{
     width: 100%;
     height: auto;
     background-color: #00963f;
     padding: 0 20%;
+    position: relative;
     .inner{
         padding: 80px 0;
         display: grid;
@@ -238,7 +246,7 @@ footer{
                 text-transform: uppercase;
             }
             p{
-                color: white;
+                color: white !important;
                 margin: 0;
             }
             
@@ -270,6 +278,26 @@ footer{
         margin: 0;
         padding-bottom: 10px;
     }
+
+    #bouncer{
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        p{
+            margin: 0;
+            color: white;
+            margin-left: 4px;
+        }
+        i{
+            color: white;
+            font-size: 30px;
+            animation-duration: 2s;
+        }
+    }
 }
 
 
@@ -297,7 +325,7 @@ footer{
         top: 0;
         grid-template-columns: 70% auto;
         img{
-            width: 60px;
+            width: 50px;
             margin: auto 30px;
         }
         .fas{
@@ -305,6 +333,9 @@ footer{
             color: white;
             justify-self: end;
             margin: auto 35px;
+        }
+        .fa-times{
+            font-size: 32px;
         }
         
     }
@@ -376,7 +407,7 @@ footer{
         top: 0;
         grid-template-columns: 70% auto;
         img{
-            width: 60px;
+            width: 50px;
             margin: auto 20px;
         }
         .fas{
@@ -384,6 +415,9 @@ footer{
             color: white;
             justify-self: end;
             margin: auto 35px;
+        }
+        .fa-times{
+            font-size: 32px;
         }
     }
 
@@ -436,6 +470,13 @@ footer{
             .middle{
                 text-align: center;
             }
+        }
+        .copyRight{
+            font-size: 12px;
+        }
+        #bouncer{
+            margin-right: 15px;
+            margin-bottom: 15px; 
         }
     }
     

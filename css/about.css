@@ -7,8 +7,13 @@
 
 body, html {
   font-family: 'Open Sans', sans-serif;
-  height: 100%;
+  min-height: 100%;
   max-width: 100%;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
 
 h1 {
@@ -127,12 +132,14 @@ h1 {
 .links-sidebar a {
   color: white;
   padding: 8px 35px;
-  opacity: 0;
+  opacity: 1;
   display: block;
   font-size: 25px;
   font-weight: bold;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+}
+
+.links-sidebar a i {
+  margin-right: 10px;
 }
 
 .links-sidebar #nav_footer {
@@ -250,6 +257,7 @@ footer {
   height: auto;
   background-color: #00963f;
   padding: 0 20%;
+  position: relative;
 }
 
 footer .inner {
@@ -270,7 +278,7 @@ footer .inner .box h3 {
 }
 
 footer .inner .box p {
-  color: white;
+  color: white !important;
   margin: 0;
 }
 
@@ -307,6 +315,29 @@ footer .copyRight {
   padding-bottom: 10px;
 }
 
+footer #bouncer {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+footer #bouncer p {
+  margin: 0;
+  color: white;
+  margin-left: 4px;
+}
+
+footer #bouncer i {
+  color: white;
+  font-size: 30px;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
 @media (min-width: 481px) and (max-width: 1024px) {
   h1, h3 {
     font-size: 25px;
@@ -328,7 +359,7 @@ footer .copyRight {
         grid-template-columns: 70% auto;
   }
   .navbar_mob img {
-    width: 60px;
+    width: 50px;
     margin: auto 30px;
   }
   .navbar_mob .fas {
@@ -337,6 +368,9 @@ footer .copyRight {
     -ms-grid-column-align: end;
         justify-self: end;
     margin: auto 35px;
+  }
+  .navbar_mob .fa-times {
+    font-size: 32px;
   }
   .links-sidebar {
     display: block;
@@ -407,7 +441,7 @@ footer .copyRight {
         grid-template-columns: 70% auto;
   }
   .navbar_mob img {
-    width: 60px;
+    width: 50px;
     margin: auto 20px;
   }
   .navbar_mob .fas {
@@ -416,6 +450,9 @@ footer .copyRight {
     -ms-grid-column-align: end;
         justify-self: end;
     margin: auto 35px;
+  }
+  .navbar_mob .fa-times {
+    font-size: 32px;
   }
   .links-sidebar {
     display: block;
@@ -467,6 +504,13 @@ footer .copyRight {
   }
   footer .inner .middle {
     text-align: center;
+  }
+  footer .copyRight {
+    font-size: 12px;
+  }
+  footer #bouncer {
+    margin-right: 15px;
+    margin-bottom: 15px;
   }
 }
 /*# sourceMappingURL=about.css.map */

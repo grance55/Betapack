@@ -1,59 +1,39 @@
 let toggleNavStatus = false,
-    navbar = document.querySelector('.links-sidebar'),
-    navbar_links = document.querySelectorAll('.links-sidebar a'),
-    nav_icon = document.getElementById('nav_icon'),
-    nav_footer = document.getElementById('nav_footer'),
-    footer = document.querySelector('footer'),
-    sec6 = document.querySelector('.section6'),
-    nav_mob = document.querySelector('.navbar_mob'),
-    body = document.querySelector('body');
-
-
-
-
-
-function redirect(url) {
-    window.location.href = url;
-}
-
+    menu = document.querySelector('.links-sidebar'),
+    menu_links = document.querySelectorAll('.links-sidebar a'),
+    menu_icon = document.getElementById('nav_icon'),
+    menu_footer = document.getElementById('nav_footer'),
+    body = document.querySelector('body'),
+    arrayLength = menu_links.length,
+    linkovi = document.querySelectorAll('.linkovi_a');
 
 function show_navbar() {
 
-    let arrayLength = navbar_links.length;
-
     if (toggleNavStatus === false) {
-        navbar.style.visibility = 'visible';
-        if (window.innerWidth < 480) {
-            navbar.style.width = '100%';
-            nav_footer.style.width = '100%';
-        }
-        else {
-            navbar.style.width = '80%';
-            nav_footer.style.width = '80%';
+        menu.style.visibility = 'visible';
+        menu.style.width = '100%';
+        menu_footer.style.width = '100%';
+        menu_footer.style.height = window.innerHeight;
+        menu_icon.classList.remove('fa-bars');
+        menu_icon.classList.add('fa-times');
+
+        for (let i = 0; i < linkovi.length; i++) {
+            linkovi[i].classList.remove('animated', 'fadeOutRight', 'faster');
+            linkovi[i].classList.add('animated', 'fadeInRight');
         }
 
-        nav_icon.classList.remove('fa-bars');
-        nav_icon.classList.add('fa-times');
-
-        for (let i = 0; i < arrayLength; i++) {
-            navbar_links[i].style.opacity = '1';
-            navbar_links[i].style.width = '100%';
-        }
         body.classList.add('stop-scrolling');
         toggleNavStatus = true;
     }
     else {
-        navbar.style.visibility = 'hidden';
-        navbar.style.width = '0';
+        menu.style.visibility = 'hidden';
+        menu.style.width = '0';
+        menu_icon.classList.remove('fa-times');
+        menu_icon.classList.add('fa-bars');
 
-        nav_icon.classList.remove('fa-times');
-        nav_icon.classList.add('fa-bars');
-
-
-
-        for (let i = 0; i < arrayLength; i++) {
-            navbar_links[i].style.opacity = '0';
-            navbar_links[i].style.width = '0';
+        for (let i = 0; i < linkovi.length; i++) {
+            linkovi[i].classList.remove('animated', 'fadeInRight');
+            linkovi[i].classList.add('animated', 'fadeOutRight', 'faster');
         }
 
         body.classList.remove('stop-scrolling');
@@ -62,17 +42,45 @@ function show_navbar() {
 }
 
 
-window.addEventListener('scroll', () => {
-    spaceBelow = window.innerHeight - sec6.getBoundingClientRect().bottom;
+
+function showText(x) {
+    console.log(x);
+    let kurac = document.querySelector('.text_btn');
+    kurac.style.visibility = 'visible';
+    kurac.classList.add('animated', 'fadeInUp');
+
+}
+/*
+function dontShowText(x, kurac) {
+    console.log(kurac);
+    kurac.style.visibility = 'hidden';
+    kurac.classList.remove('animated', 'fadeInUp');
+
+}
+*/
+
+function redirect(url) {
+    window.location.href = url;
+}
 
 
-    if (screen.height === Math.round(spaceBelow + 60)) {
-        nav_mob.classList.remove('.navbar_mob_light');
-        nav_mob.classList.add('navbar_mob_dark');
+function show_text(text_box, btn) {
+
+    let text = document.querySelector(`.${text_box}`),
+        button_change = document.getElementById(btn);
+
+
+    if (button_change.innerHTML === 'VIŠE') {
+        button_change.innerHTML = 'MANJE';
+        text.classList.remove('animated', 'fadeOutDown', 'slow');
+        text.classList.add('animated', 'fadeInDown', 'slow');
+        text.style.display = 'block';
+    } else {
+        button_change.innerHTML = 'VIŠE';
+        text.classList.remove('animated', 'fadeInDown', 'slow');
+        text.classList.add('animated', 'fadeOutDown', 'slow');
+        setTimeout(function () {
+            text.style.display = 'none';
+        }, 2000);
     }
-    else {
-        nav_mob.classList.add('.navbar_mob_light');
-        nav_mob.classList.remove('navbar_mob_dark');
-    }
-});
-
+}

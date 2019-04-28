@@ -5,14 +5,18 @@
 }
 body,html{
     font-family: 'Open Sans', sans-serif;
-    height: 100%;
+    min-height: 100%;
     max-width: 100%;
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
 }
 
 h1{
     color: #00963f;
 }
-
 
 .navbar{
     width: 100%;
@@ -33,9 +37,6 @@ h1{
             font-size: 20px;
             margin-right: 20px;
         }
-        .products{
-
-        }
         .nav-link {
             text-decoration: none;
             color: #404244;
@@ -45,7 +46,7 @@ h1{
             position: relative;            
             padding: 0;
         }
-        
+    
     
         .nav-link::before {
             transition: 400ms;
@@ -115,11 +116,14 @@ h1{
     a{
         color: white;
         padding: 8px 35px;
-        opacity: 0;
+        opacity: 1;
         display: block;
         font-size: 25px;
         font-weight: bold;
-        transition: all 0.5s ease-in-out;
+        
+        i{
+            margin-right: 10px;
+        }
         
     }
     #nav_footer{
@@ -128,6 +132,7 @@ h1{
         display: grid;
         grid-template-columns: repeat(2, 50%);
         width: 80%;
+        margin-bottom: 20px;
         .box1{
             justify-self: start;
             margin: 10px;
@@ -209,7 +214,7 @@ h1{
     margin: 50px 20%;
     h1{
         text-transform: uppercase;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
     button{
         cursor: pointer;
@@ -232,18 +237,26 @@ h1{
     }
 }
 
-.products{
+.products-box{
     margin:  0 20%;
     margin-bottom: 150px;
+    height: auto;
     display: grid;
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: 60% 40%;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+        "box1 box1_text"
+        "box2 box2_text"
+        "box3 box3_text"
+        "box4 box4_text";
+        
     img{
         opacity: 1;
         z-index: -1;
         width: 100%;
         height: 100%;
     }
+
     .box:hover{
         img{
             opacity: 0.5;
@@ -256,6 +269,7 @@ h1{
     .box{
         position: relative;
         margin: 10%;
+        margin-right: 0;
         img{
             opacity: 1;
             -webkit-transition: opacity 0.5s ease-in-out;
@@ -302,26 +316,53 @@ h1{
             }
         }
     }
-    /*
+    
     .box1{
-        margin-right: 10px;
-        margin-bottom: 10px;
+        grid-area: box1;
+    }
+    .box1_text{
+        grid-area: box1_text;
+        display: none;
+        margin: auto;
+        ul{
+            margin-left: 50px;
+        }
     }
     .box2{
-        margin-left: 10px;
-        margin-bottom: 10px;
+        grid-area: box2;
+    }
+    .box2_text{
+        grid-area: box2_text;
+        display: none;
+        margin: auto;
+        ul{
+            margin-left: 50px;
+        }
     }
     .box3{
-        margin-right: 10px;
-        margin-top: 10px;
+        grid-area: box3;
+    }
+    .box3_text{
+        grid-area: box3_text;
+        display: none;
+        margin: auto;
+        ul{
+            margin-left: 50px;
+        }
     }
     .box4{
-        margin-top: 10px;
-        margin-left: 10px;
+        grid-area: box4;
     }
-    */
+    .box4_text{
+        grid-area: box4_text;
+        display: none;
+        margin: auto;
+        ul{
+            margin-left: 50px;
+        }
+    }
+    
 }
-
 
 
 
@@ -330,6 +371,7 @@ footer{
     height: auto;
     background-color: #00963f;
     padding: 0 20%;
+    position: relative;
     .inner{
         padding: 80px 0;
         display: grid;
@@ -343,7 +385,7 @@ footer{
                 text-transform: uppercase;
             }
             p{
-                color: white;
+                color: white !important;
                 margin: 0;
             }
             
@@ -366,6 +408,7 @@ footer{
         }
         .last{
             justify-self: end;
+            text-align: center;
         }
     }
     .copyRight{
@@ -373,6 +416,26 @@ footer{
         color: white;
         margin: 0;
         padding-bottom: 10px;
+    }
+
+    #bouncer{
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        p{
+            margin: 0;
+            color: white;
+            margin-left: 4px;
+        }
+        i{
+            color: white;
+            font-size: 30px;
+            animation-duration: 2s;
+        }
     }
 }
 
@@ -393,7 +456,7 @@ footer{
         top: 0;
         grid-template-columns: 70% auto;
         img{
-            width: 60px;
+            width: 50px;
             margin: auto 30px;
         }
         .fas{
@@ -402,7 +465,9 @@ footer{
             justify-self: end;
             margin: auto 35px;
         }
-        
+        .fa-times{
+            font-size: 32px;
+        }
     }
 
     .links-sidebar{
@@ -419,13 +484,66 @@ footer{
         }
     }
 
-
-    .products{
-        grid-template-columns: none;
+    .products-box{
+        margin: 20%;
+        grid-template-columns: 100%;
         grid-template-rows: repeat(4, auto);
         grid-row-gap: 20px;
+        grid-template-areas: 
+        "box1"
+        "box1_text"
+        "box2"
+        "box2_text"
+        "box3"
+        "box3_text"
+        "box4"
+        "box4_text";
         .box{
             margin: 0;
+        }
+        .box1{
+            grid-area: box1;
+        }
+        .box1_text{
+            grid-area: box1_text;
+            display: none;
+            margin: auto;
+            ul{
+                margin-left: 50px;
+            }
+        }
+        .box2{
+            grid-area: box2;
+        }
+        .box2_text{
+            grid-area: box2_text;
+            display: none;
+            margin: auto;
+            ul{
+                margin-left: 50px;
+            }
+        }
+        .box3{
+            grid-area: box3;
+        }
+        .box3_text{
+            grid-area: box3_text;
+            display: none;
+            margin: auto;
+            ul{
+                margin-left: 50px;
+            }
+        }
+        .box4{
+            grid-area: box4;
+        }
+        .box4_text{
+            grid-area: box4_text;
+            display: none;
+            margin: auto;
+            ul{
+                margin-left: 50px;
+            }
         }
     }
 
@@ -466,7 +584,7 @@ footer{
         top: 0;
         grid-template-columns: 70% auto;
         img{
-            width: 60px;
+            width: 50px;
             margin: auto 20px;
         }
         .fas{
@@ -474,6 +592,9 @@ footer{
             color: white;
             justify-self: end;
             margin: auto 35px;
+        }
+        .fa-times{
+            font-size: 32px;
         }
     }
 
@@ -498,13 +619,72 @@ footer{
         
     }
 
-    .products{
+    .section1{
+        h1{
+            margin-bottom: 50px;
+        }
+    }
+
+    .products-box{
         margin: 10%;
-        grid-template-columns: none;
+        grid-template-columns: 100%;
         grid-template-rows: repeat(4, auto);
         grid-row-gap: 20px;
+        grid-template-areas: 
+        "box1"
+        "box1_text"
+        "box2"
+        "box2_text"
+        "box3"
+        "box3_text"
+        "box4"
+        "box4_text";
         .box{
             margin: 0;
+        }
+        .box1{
+            grid-area: box1;
+        }
+        .box1_text{
+            grid-area: box1_text;
+            display: none;
+            margin: auto;
+            ul{
+                margin-left: 50px;
+            }
+        }
+        .box2{
+            grid-area: box2;
+        }
+        .box2_text{
+            grid-area: box2_text;
+            display: none;
+            margin: auto;
+            ul{
+                margin-left: 50px;
+            }
+        }
+        .box3{
+            grid-area: box3;
+        }
+        .box3_text{
+            grid-area: box3_text;
+            display: none;
+            margin: auto;
+            ul{
+                margin-left: 50px;
+            }
+        }
+        .box4{
+            grid-area: box4;
+        }
+        .box4_text{
+            grid-area: box4_text;
+            display: none;
+            margin: auto;
+            ul{
+                margin-left: 50px;
+            }
         }
     }
 
@@ -521,5 +701,14 @@ footer{
                 text-align: center;
             }
         }
+        .copyRight{
+            font-size: 12px;
+        }
+        #bouncer{
+            margin-right: 15px;
+            margin-bottom: 15px; 
+        }
     }
 }
+
+

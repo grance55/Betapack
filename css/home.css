@@ -21,6 +21,11 @@ h1 {
   overflow: hidden;
 }
 
+#first_h1 {
+  color: #00963f;
+  margin-left: 100px;
+}
+
 .navbar {
   width: 100%;
   border-top: 3px solid #00963f;
@@ -47,8 +52,6 @@ h1 {
   color: #616b61;
   font-size: 20px;
   margin-right: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 .navbar .links .nav-link {
@@ -125,8 +128,7 @@ h1 {
   position: fixed;
   right: 0;
   width: 0;
-  bottom: 0;
-  height: calc(100vh - 60px);
+  height: 100vh;
   background-color: #00963f;
   visibility: hidden;
   -webkit-transition: all 0.5s ease-in-out;
@@ -136,12 +138,14 @@ h1 {
 .links-sidebar a {
   color: white;
   padding: 8px 35px;
-  opacity: 0;
+  opacity: 1;
   display: block;
   font-size: 25px;
   font-weight: bold;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+}
+
+.links-sidebar a i {
+  margin-right: 10px;
 }
 
 .links-sidebar #nav_footer {
@@ -234,7 +238,7 @@ h1 {
   margin: 0;
   font-size: 40px;
   color: #616b61;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .section1 .slidingVertical {
@@ -327,6 +331,7 @@ h1 {
 }
 
 .section2 {
+  visibility: hidden;
   margin: 100px 0;
   padding: 0 20%;
   display: -ms-grid;
@@ -418,11 +423,17 @@ h1 {
 }
 
 .section4 .carousel ol li {
-  background-color: white;
-  height: 12px;
-  width: 12px;
+  background-color: #616b61;
+  height: 11px;
+  width: 11px;
   border-radius: 50%;
-  border: 2px solid #616b61;
+  margin-top: 1px;
+}
+
+.section4 .carousel ol .active {
+  margin-top: 0;
+  height: 13px;
+  width: 13px;
 }
 
 .section5 {
@@ -457,6 +468,18 @@ h1 {
   margin-left: 10px;
 }
 
+.section5 .carousel-inner img {
+  cursor: pointer;
+}
+
+.section5 .carousel-inner .inner_kurac {
+  display: inline-block;
+}
+
+.section5 .carousel-inner .inner_kurac .text_btn {
+  visibility: hidden;
+}
+
 .section5 .carousel-control-prev .fas,
 .section5 .carousel-control-next .fas {
   color: #00963f;
@@ -467,95 +490,52 @@ h1 {
   display: none;
 }
 
+.section5_mob img {
+  cursor: pointer;
+}
+
 .section6 {
-  margin: 0 20%;
-  padding-top: 100px;
-}
-
-.section6 h1 {
-  margin-bottom: 50px;
-}
-
-.section6 .inner {
-  margin: 0 auto;
-  max-width: 600px;
+  margin: 100px 10%;
+  text-align: center;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (200px)[3];
-      grid-template-columns: repeat(3, 200px);
-  -ms-grid-rows: (200px)[3];
-      grid-template-rows: repeat(3, 200px);
-      grid-template-areas: "neva big maco" "reviso big olival" "croatia_airlines croatia_airlines croatia_airlines";
+  -ms-grid-columns: (auto)[6];
+      grid-template-columns: repeat(6, auto);
 }
 
-.section6 .inner img {
+.section6 img {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
+  width: 100px;
   cursor: pointer;
-  width: 150px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
-.section6 .inner img:hover {
+.section6 img:hover {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
 }
 
-.section6 .inner #neva {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: neva;
-  width: 150px;
-  margin: auto;
-}
-
-.section6 .inner #big {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 2;
-  grid-area: big;
-  width: 150px;
-  margin: auto;
-}
-
-.section6 .inner #maco {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-  grid-area: maco;
-  width: 150px;
-  margin: auto;
-}
-
-.section6 .inner #reviso {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: reviso;
-  width: 150px;
-  margin: auto;
-}
-
-.section6 .inner #olival {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
-  grid-area: olival;
-  width: 150px;
-  margin: auto;
-}
-
-.section6 .inner #croatia_airlines {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: croatia_airlines;
-  width: 400px;
-  margin: 0 auto;
-}
-
 .section6 h1 {
-  color: #00963f;
-  text-transform: uppercase;
-  text-align: center;
+  padding-bottom: 50px;
+}
+
+.section6 #big {
+  width: 70px;
+}
+
+.section6 #maco {
+  width: 120px;
+}
+
+.section6 #croatia_airlines {
+  width: 200px;
 }
 
 footer {
@@ -584,7 +564,7 @@ footer .inner .box h3 {
 }
 
 footer .inner .box p {
-  color: white;
+  color: white !important;
   margin: 0;
 }
 
@@ -634,6 +614,7 @@ footer #bouncer {
 footer #bouncer p {
   margin: 0;
   color: white;
+  margin-left: 4px;
 }
 
 footer #bouncer i {
@@ -643,7 +624,7 @@ footer #bouncer i {
           animation-duration: 2s;
 }
 
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 480px) and (max-width: 1024px) {
   h1, h3, h2 {
     font-size: 30px;
   }
@@ -652,6 +633,7 @@ footer #bouncer i {
   }
   .navbar_mob {
     display: inline-block;
+    background-color: #00963f;
     width: 100%;
     height: 60px;
     position: fixed;
@@ -663,7 +645,7 @@ footer #bouncer i {
         grid-template-columns: 70% auto;
   }
   .navbar_mob img {
-    width: 60px;
+    width: 50px;
     margin: auto 30px;
   }
   .navbar_mob .fas {
@@ -673,13 +655,8 @@ footer #bouncer i {
         justify-self: end;
     margin: auto 35px;
   }
-  .navbar_mob_light {
-    background-color: #00963f;
-    -webkit-transition: 500ms ease;
-    transition: 500ms ease;
-  }
-  .navbar_mob_dark {
-    background-color: #025725;
+  .navbar_mob .fa-times {
+    font-size: 32px;
   }
   .links-sidebar {
     display: block;
@@ -745,73 +722,67 @@ footer #bouncer i {
     font-size: 30px;
   }
   .section6 {
-    margin: 0 20%;
-    padding: 100px 0;
-  }
-  .section6 h1 {
-    margin-bottom: 40px;
-  }
-  .section6 .inner {
-    margin: 0 auto;
     -ms-grid-columns: none;
         grid-template-columns: none;
     -ms-grid-rows: (auto)[6];
         grid-template-rows: repeat(6, auto);
-    grid-row-gap: 10px;
+    grid-row-gap: 20px;
         grid-template-areas: "neva" "maco" "reviso" "olival" "croatia_airlines" "big";
   }
-  .section6 .inner #neva {
+  .section6 #neva {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: neva;
-    width: 120px;
+    width: 100px;
     margin: auto;
   }
-  .section6 .inner #maco {
+  .section6 #maco {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: maco;
-    width: 150px;
+    width: 130px;
     margin: 10px auto;
   }
-  .section6 .inner #reviso {
+  .section6 #reviso {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: reviso;
-    width: 130px;
+    width: 110px;
     margin: 10px auto;
   }
-  .section6 .inner #olival {
+  .section6 #olival {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: olival;
-    width: 130px;
+    width: 110px;
     margin: 10px auto;
   }
-  .section6 .inner #croatia_airlines {
+  .section6 #croatia_airlines {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     grid-area: croatia_airlines;
-    width: 280px;
+    width: 250px;
     margin: 10px auto;
   }
-  .section6 .inner #big {
+  .section6 #big {
     -ms-grid-row: 6;
     -ms-grid-column: 1;
     grid-area: big;
-    width: 80px;
+    width: 60px;
     margin: auto;
+  }
+  .section6 img {
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   footer {
     padding: 0 20%;
-    height: calc(100vh - 60px);
   }
   footer .inner {
     -ms-grid-columns: none;
         grid-template-columns: none;
     -ms-grid-rows: (auto)[3];
         grid-template-rows: repeat(3, auto);
-    padding: 0;
   }
   footer .inner .box {
     -ms-grid-column-align: center;
@@ -820,14 +791,6 @@ footer #bouncer i {
   }
   footer .inner .middle {
     text-align: center;
-  }
-  footer .copyRight {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
   }
 }
 
@@ -852,7 +815,7 @@ footer #bouncer i {
         grid-template-columns: 70% auto;
   }
   .navbar_mob img {
-    width: 60px;
+    width: 50px;
     margin: auto 20px;
   }
   .navbar_mob .fas {
@@ -862,17 +825,12 @@ footer #bouncer i {
         justify-self: end;
     margin: auto 35px;
   }
+  .navbar_mob .fa-times {
+    font-size: 32px;
+  }
   .links-sidebar {
     display: block;
     margin-top: 60px;
-  }
-  .navbar_mob_light {
-    background-color: #00963f;
-    -webkit-transition: 500ms ease;
-    transition: 500ms ease;
-  }
-  .navbar_mob_dark {
-    background-color: #025725;
   }
   .banner {
     margin: 0;
@@ -949,75 +907,67 @@ footer #bouncer i {
     font-size: 30px;
   }
   .section6 {
-    margin: 0 10%;
-    padding: 100px 0;
-    border: none;
-  }
-  .section6 h1 {
-    margin-bottom: 40px;
-  }
-  .section6 .inner {
-    margin: 20px auto;
     -ms-grid-columns: none;
         grid-template-columns: none;
     -ms-grid-rows: (auto)[6];
         grid-template-rows: repeat(6, auto);
-    grid-row-gap: 10px;
+    grid-row-gap: 20px;
         grid-template-areas: "neva" "maco" "reviso" "olival" "croatia_airlines" "big";
   }
-  .section6 .inner #neva {
+  .section6 #neva {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: neva;
     width: 100px;
     margin: auto;
   }
-  .section6 .inner #maco {
+  .section6 #maco {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: maco;
     width: 130px;
     margin: 10px auto;
   }
-  .section6 .inner #reviso {
+  .section6 #reviso {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: reviso;
     width: 110px;
     margin: 10px auto;
   }
-  .section6 .inner #olival {
+  .section6 #olival {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: olival;
     width: 110px;
     margin: 10px auto;
   }
-  .section6 .inner #croatia_airlines {
+  .section6 #croatia_airlines {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     grid-area: croatia_airlines;
-    width: 260px;
+    width: 250px;
     margin: 10px auto;
   }
-  .section6 .inner #big {
+  .section6 #big {
     -ms-grid-row: 6;
     -ms-grid-column: 1;
     grid-area: big;
     width: 60px;
     margin: auto;
   }
+  .section6 img {
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
   footer {
-    padding: 0;
-    height: calc(100vh - 60px);
-    padding-top: 70px;
+    padding: 0 10%;
   }
   footer .inner {
     -ms-grid-columns: none;
         grid-template-columns: none;
     -ms-grid-rows: (auto)[3];
         grid-template-rows: repeat(3, auto);
-    padding: 0;
   }
   footer .inner .box {
     -ms-grid-column-align: center;
@@ -1028,17 +978,11 @@ footer #bouncer i {
     text-align: center;
   }
   footer .copyRight {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
     font-size: 12px;
   }
   footer #bouncer {
-    margin: 0;
-    margin-right: 5px;
+    margin-right: 15px;
+    margin-bottom: 15px;
   }
 }
 /*# sourceMappingURL=home.css.map */
