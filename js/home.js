@@ -7,6 +7,8 @@ let toggleNavStatus = false,
     arrayLength = menu_links.length,
     linkovi = document.querySelectorAll('.linkovi_a');
 
+
+
 function show_navbar() {
 
     if (toggleNavStatus === false) {

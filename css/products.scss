@@ -440,7 +440,10 @@ footer{
 }
 
 @media (min-width: 481px) and (max-width: 1024px){
-    
+    h1,h3, h2{
+        font-size: 30px;
+    }
+
     .navbar{
         display: none;
     }
@@ -500,6 +503,20 @@ footer{
         "box4_text";
         .box{
             margin: 0;
+            img{
+                width: 300px;
+                height: 300px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+            .inner{
+                visibility: visible;
+                opacity: 0.8;
+                position: relative;
+                top: 0; left: 0;
+                transform: none;
+            }
         }
         .box1{
             grid-area: box1;
@@ -546,12 +563,7 @@ footer{
                 margin-left: 50px;
             }
         }
-        .box .inner{
-            visibility: visible;
-            opacity: 0.8;
-            position: absolute;
-            top: 90%; left: 50%;
-        }
+        
     }
 
     footer{
@@ -627,14 +639,14 @@ footer{
     }
 
     .section1{
-        margin-top: 50px;
+        margin: 50px 0;
         h1{
             margin-bottom: 50px;
         }
     }
 
     .products-box{
-        margin: 10%;
+        margin: 10% 0;
         margin-bottom: 100px;
         grid-template-columns: 100%;
         grid-template-rows: repeat(4, auto);
@@ -650,66 +662,52 @@ footer{
         "box4_text";
         .box{
             margin: 0;
+            
+            img{
+                width: 300px;
+                height: 300px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+            .inner{
+                visibility: visible;
+                opacity: 0.8;
+                position: relative;
+                top: 0; left: 0;
+                transform: none;
+            }
+        }
+        .text{
+            margin: 20px 10%;
+            display: none;
+            ul{
+                margin-left: 50px;
+            }
         }
         .box1{
             grid-area: box1;
-            .inner{
-                margin-top: 10px;
-            }
         }
         .box1_text{
             grid-area: box1_text;
-            display: none;
-            margin: auto;
-            margin-top: 30px;
-            ul{
-                margin-left: 50px;
-            }
         }
         .box2{
             grid-area: box2;
-            .inner{
-                margin-top: 10px;
-            }
         }
         .box2_text{
             grid-area: box2_text;
-            display: none;
-            margin: auto;
-            margin-top: 20px;
-            ul{
-                margin-left: 50px;
-            }
         }
         .box3{
             grid-area: box3;
         }
         .box3_text{
             grid-area: box3_text;
-            display: none;
-            margin: auto;
-            margin-top: 10px;
-            ul{
-                margin-left: 50px;
-            }
         }
         .box4{
             grid-area: box4;
         }
         .box4_text{
             grid-area: box4_text;
-            display: none;
-            margin: auto;
-            margin-top: 10px;
-            ul{
-                margin-left: 50px;
-            }
-        }
-        .box .inner{
-            visibility: visible;
-            opacity: 0.8;
-            position: absolute;
-            top: 90%; left: 50%;
         }
     }
 
