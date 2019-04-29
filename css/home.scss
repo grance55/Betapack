@@ -416,12 +416,16 @@ h1{
         img{
             cursor: pointer;
         }
-        .inner_kurac{
+        .text_btn{
+            font-weight: bold;
+        }
+        .inner{
             display: inline-block; 
-            .text_btn{
-                visibility: hidden;
+            img::hover{    
+                opacity: 0.5;
             }
         }
+        
         
         
     }

@@ -211,7 +211,7 @@ h1{
 
 .section1{
     text-align: center;
-    margin: 50px 20%;
+    margin: 100px 20%;
     h1{
         text-transform: uppercase;
         margin-bottom: 50px;
@@ -485,7 +485,7 @@ footer{
     }
 
     .products-box{
-        margin: 20%;
+        margin: 10% 20%;
         grid-template-columns: 100%;
         grid-template-rows: repeat(4, auto);
         grid-row-gap: 20px;
@@ -508,6 +508,7 @@ footer{
             grid-area: box1_text;
             display: none;
             margin: auto;
+            margin-top: 20px;
             ul{
                 margin-left: 50px;
             }
@@ -544,6 +545,12 @@ footer{
             ul{
                 margin-left: 50px;
             }
+        }
+        .box .inner{
+            visibility: visible;
+            opacity: 0.8;
+            position: absolute;
+            top: 90%; left: 50%;
         }
     }
 
@@ -620,6 +627,7 @@ footer{
     }
 
     .section1{
+        margin-top: 50px;
         h1{
             margin-bottom: 50px;
         }
@@ -627,6 +635,7 @@ footer{
 
     .products-box{
         margin: 10%;
+        margin-bottom: 100px;
         grid-template-columns: 100%;
         grid-template-rows: repeat(4, auto);
         grid-row-gap: 20px;
@@ -644,22 +653,30 @@ footer{
         }
         .box1{
             grid-area: box1;
+            .inner{
+                margin-top: 10px;
+            }
         }
         .box1_text{
             grid-area: box1_text;
             display: none;
             margin: auto;
+            margin-top: 30px;
             ul{
                 margin-left: 50px;
             }
         }
         .box2{
             grid-area: box2;
+            .inner{
+                margin-top: 10px;
+            }
         }
         .box2_text{
             grid-area: box2_text;
             display: none;
             margin: auto;
+            margin-top: 20px;
             ul{
                 margin-left: 50px;
             }
@@ -671,6 +688,7 @@ footer{
             grid-area: box3_text;
             display: none;
             margin: auto;
+            margin-top: 10px;
             ul{
                 margin-left: 50px;
             }
@@ -682,9 +700,16 @@ footer{
             grid-area: box4_text;
             display: none;
             margin: auto;
+            margin-top: 10px;
             ul{
                 margin-left: 50px;
             }
+        }
+        .box .inner{
+            visibility: visible;
+            opacity: 0.8;
+            position: absolute;
+            top: 90%; left: 50%;
         }
     }
 

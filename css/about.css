@@ -236,7 +236,7 @@ h1 {
 
 .section {
   width: 100%;
-  padding: 50px 20%;
+  padding: 100px 20%;
   text-align: justify;
 }
 
@@ -385,7 +385,7 @@ footer #bouncer i {
     z-index: 2;
   }
   .section {
-    padding: 50px 20%;
+    padding: 100px 20%;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     -ms-grid-rows: (auto)[2];

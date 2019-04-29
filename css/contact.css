@@ -556,7 +556,7 @@ footer #bouncer i {
         grid-template-columns: 100%;
     -ms-grid-rows: (auto)[2];
         grid-template-rows: repeat(2, auto);
-    padding: 100px 10%;
+    padding: 50px 10%;
   }
   .section1 .box {
     margin-bottom: 80px;

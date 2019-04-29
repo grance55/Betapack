@@ -44,20 +44,23 @@ function show_navbar() {
 
 
 function showText(x) {
-    console.log(x);
-    let kurac = document.querySelector('.text_btn');
-    kurac.style.visibility = 'visible';
-    kurac.classList.add('animated', 'fadeInUp');
+    console.log(x.getElementsByTagName('img'), x.querySelector('.text_btn'));
+    let slika = x.getElementsByTagName('img');
+    slika[0].style.opacity = 0.8;
+
+    let nesto = x.querySelector('.text_btn');
+    nesto.style.color = 'green';
 
 }
-/*
-function dontShowText(x, kurac) {
-    console.log(kurac);
-    kurac.style.visibility = 'hidden';
-    kurac.classList.remove('animated', 'fadeInUp');
 
+function dontShowText(x) {
+    let slika = x.getElementsByTagName('img');
+    slika[0].style.opacity = 1;
+
+
+    let nesto = x.querySelector('.text_btn');
+    nesto.style.color = 'black';
 }
-*/
 
 function redirect(url) {
     window.location.href = url;

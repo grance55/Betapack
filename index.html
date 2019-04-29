@@ -101,29 +101,36 @@
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="15000">
-                    <div class="inner_kurac">
+                    <div class="inner" onmouseover="showText(this)" onmouseout="dontShowText(this)">
                         <img src="./images/proizvodi/bracera_back.jpg"
-                            onclick="redirect('http://betapack-zadar.com/products.html')" mouseover="showText(this)"
-                            mouseout="dontShowText(this)">
-                        <p class="text_btn">maramice</p>
+                            onclick="redirect('http://betapack-zadar.com/products.html')">
+                        <p class="text_btn">ŠEČERI</p>
                     </div>
-                    <div class="inner_kurac">
+                    <div class="inner" onmouseover="showText(this)" onmouseout="dontShowText(this)">
                         <img src="./images/proizvodi/maramice.jpg" class="midd"
                             onclick="redirect('http://betapack-zadar.com/products.html')">
-                        <p class="text_btn">jhjhfuws</p>
+                        <p class="text_btn">VLAŽNE MARAMICE</p>
                     </div>
-                    <div class="inner_kurac" mouseout>
+                    <div class="inner" onmouseover="showText(this)" onmouseout="dontShowText(this)">
                         <img src="./images/proizvodi/keksi.jpg"
                             onclick="redirect('http://betapack-zadar.com/products.html')">
-                        <p class="text_btn">weihfuwe</p>
+                        <p class="text_btn">KEKSI</p>
                     </div>
 
                 </div>
                 <div class="carousel-item" data-interval="15000">
-                    <img src="./images/proizvodi/burger.jpg" class="left"
-                        onclick="redirect('http://betapack-zadar.com/products.html')">
-                    <img src="./images/proizvodi/testeri.jpg" class="right"
-                        onclick="redirect('http://betapack-zadar.com/products.html')">
+                    <div class="inner" onmouseover="showText(this)" onmouseout="dontShowText(this)">
+                        <img src="./images/proizvodi/burger.jpg" class="left"
+                            onclick="redirect('http://betapack-zadar.com/products.html')">
+                        <p class="text_btn">MARAMICE</p>
+                    </div>
+                    <div class="inner" onmouseover="showText(this)" onmouseout="dontShowText(this)">
+                        <img src="./images/proizvodi/testeri.jpg" class="right"
+                            onclick="redirect('http://betapack-zadar.com/products.html')">
+                        <p class="text_btn">TESTERI</p>
+                    </div>
+
+
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">

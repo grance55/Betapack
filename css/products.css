@@ -237,7 +237,7 @@ h1 {
 
 .section1 {
   text-align: center;
-  margin: 50px 20%;
+  margin: 100px 20%;
 }
 
 .section1 h1 {
@@ -548,7 +548,7 @@ footer #bouncer i {
     z-index: 2;
   }
   .products-box {
-    margin: 20%;
+    margin: 10% 20%;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     -ms-grid-rows: (auto)[4];
@@ -570,6 +570,7 @@ footer #bouncer i {
     grid-area: box1_text;
     display: none;
     margin: auto;
+    margin-top: 20px;
   }
   .products-box .box1_text ul {
     margin-left: 50px;
@@ -618,6 +619,13 @@ footer #bouncer i {
   }
   .products-box .box4_text ul {
     margin-left: 50px;
+  }
+  .products-box .box .inner {
+    visibility: visible;
+    opacity: 0.8;
+    position: absolute;
+    top: 90%;
+    left: 50%;
   }
   footer {
     padding: 0 20%;
@@ -690,11 +698,15 @@ footer #bouncer i {
     margin-top: 60px;
     z-index: 2;
   }
+  .section1 {
+    margin-top: 50px;
+  }
   .section1 h1 {
     margin-bottom: 50px;
   }
   .products-box {
     margin: 10%;
+    margin-bottom: 100px;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     -ms-grid-rows: (auto)[4];
@@ -710,12 +722,16 @@ footer #bouncer i {
     -ms-grid-column: 1;
     grid-area: box1;
   }
+  .products-box .box1 .inner {
+    margin-top: 10px;
+  }
   .products-box .box1_text {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: box1_text;
     display: none;
     margin: auto;
+    margin-top: 30px;
   }
   .products-box .box1_text ul {
     margin-left: 50px;
@@ -725,12 +741,16 @@ footer #bouncer i {
     -ms-grid-column: 1;
     grid-area: box2;
   }
+  .products-box .box2 .inner {
+    margin-top: 10px;
+  }
   .products-box .box2_text {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: box2_text;
     display: none;
     margin: auto;
+    margin-top: 20px;
   }
   .products-box .box2_text ul {
     margin-left: 50px;
@@ -746,6 +766,7 @@ footer #bouncer i {
     grid-area: box3_text;
     display: none;
     margin: auto;
+    margin-top: 10px;
   }
   .products-box .box3_text ul {
     margin-left: 50px;
@@ -761,9 +782,17 @@ footer #bouncer i {
     grid-area: box4_text;
     display: none;
     margin: auto;
+    margin-top: 10px;
   }
   .products-box .box4_text ul {
     margin-left: 50px;
+  }
+  .products-box .box .inner {
+    visibility: visible;
+    opacity: 0.8;
+    position: absolute;
+    top: 90%;
+    left: 50%;
   }
   footer {
     padding: 0 10%;

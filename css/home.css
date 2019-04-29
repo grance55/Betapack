@@ -472,12 +472,16 @@ h1 {
   cursor: pointer;
 }
 
-.section5 .carousel-inner .inner_kurac {
+.section5 .carousel-inner .text_btn {
+  font-weight: bold;
+}
+
+.section5 .carousel-inner .inner {
   display: inline-block;
 }
 
-.section5 .carousel-inner .inner_kurac .text_btn {
-  visibility: hidden;
+.section5 .carousel-inner .inner img::hover {
+  opacity: 0.5;
 }
 
 .section5 .carousel-control-prev .fas,
